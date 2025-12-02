@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Strona główna</string>
+
+    <string name="success">Sukces</string>
+    <string name="failure">Niepowodzenie</string>
+
+    <string name="patch_warnning">Instalacja wiąże się z ryzykiem. Upewnij się, że masz kopię zapasową danych.</string>
+    <string name="patch">Poprawka</string>
+
+    <string name="kernel_patch">KernelPatch</string>
+    <string name="android_patch">AndroidPatch</string>
+
+    <string name="reboot">Uruchom ponownie</string>
+    <string name="settings">Ustawienia</string>
+    <string name="reboot_recovery">Uruchom ponownie w trybie Recovery</string>
+    <string name="reboot_bootloader">Uruchom ponownie w trybie Bootloader</string>
+    <string name="reboot_download">Uruchom ponownie w trybie Download</string>
+    <string name="reboot_edl">Uruchom ponownie w trybie EDL</string>
+    <string name="about">O aplikacji</string>
+    <string name="settings_app_language">Język</string>
+    <string name="system_default">Domyślne ustawienia systemowe</string>
+    <string name="settings_global_namespace_mode">Tryb globalnej przestrzeni nazw</string>
+    <string name="settings_global_namespace_mode_summary">Wszystkie sesje root używają globalnej przestrzeni montowania nazw</string>
+    <string name="settings_clear_super_key_dialog">Czy na pewno chcesz kontynuować?</string>
+
+    <string name="su_exclude_all_title">Wyklucz wszystkie</string>
+    <string name="su_exclude_all_confirm">Czy na pewno chcesz wykluczyć wszystkie aplikacje bez uprawnień root?</string>
+
+    <string name="home_learn_apatch">Dowiedz się o APatch</string>
+    <string name="home_click_to_learn_apatch">Poznaj funkcje APatch i sposób ich używania</string>
+    <string name="settings_hide_apatch_card">Ukryj kartę "Dowiedz się o APatch"</string>
+    <string name="settings_hide_apatch_card_summary">Ukryj kartę "Dowiedz się o APatch" na stronie głównej</string>
+
+    <string name="about_source_code"><![CDATA[<p>Zobacz kod źródłowy na %1$s<p/>Dołącz do naszego %2$s kanału<p/>Dołącz do naszej %3$s grupy]]></string>
+    <string name="send_log">Wyślij logi</string>
+    <string name="save_log">Zapisz logi</string>
+    <string name="log_saved">Logi zapisane</string>
+    <string name="safe_mode">Tryb awaryjny</string>
+
+    <string name="super_key">SuperKlucz</string>
+    <string name="clear_super_key">Wyczyść SuperKlucz</string>
+    <string name="patch_set_superkey">Ustaw SuperKlucz</string>
+    <string name="home_patch_set_key_desc">Tylko dane uwierzytelniające dla KernelPatch</string>
+    <string name="home_patch_next_step">Następny krok</string>
+
+    <string name="home_not_installed">Nie zainstalowano</string>
+    <string name="home_install_unknown">Nie zainstalowano lub nie uwierzytelniono</string>
+    <string name="home_install_unknown_summary">Kliknij, aby zainstalować</string>
+    <string name="home_click_to_install">Kliknij, aby zainstalować</string>
+    <string name="home_working">Działa 😋</string>
+    <string name="home_kp_need_update">Dostępna nowa wersja</string>
+    <string name="home_kp_cando_update">Aktualizuj</string>
+
+    <string name="home_installing">Instalowanie</string>
+
+    <string name="kpatch_version">Wersja: %s</string>
+    <string name="apatch_version">Wersja: %s</string>
+
+    <string name="kpatch_version_update" formatted="false">Wersja: %s -&gt; %s</string>
+    <string name="kpatch_shadow_path_title">kpatch</string>
+    <string name="home_auth_key_title">Wprowadź SuperKlucz</string>
+    <string name="home_auth_key_desc">Uruchom po uwierzytelnieniu</string>
+    <string name="home_kpatch_info_title">Informacje</string>
+
+    <string name="home_ap_cando_install">Zainstaluj</string>
+
+    <string name="home_ap_cando_uninstall">Odinstaluj</string>
+    <string name="home_ap_cando_reboot">Uruchom ponownie</string>
+
+    <string name="patch_title">Poprawka</string>
+
+    <string name="patch_config_title">Poprawki</string>
+    <string name="patch_mode_bootimg_patch">Tryb: Poprawka</string>
+    <string name="patch_mode_patch_and_install">Tryb: Poprawka i instalacja</string>
+    <string name="patch_mode_install_to_next_slot">Tryb: Zainstaluj w nieaktywnym slocie (Po OTA)</string>
+    <string name="patch_mode_uninstall_patch">Tryb: Odinstaluj KPatch</string>
+    <string name="patch_select_bootimg_btn">Wybierz obraz startowy</string>
+    <string name="patch_embed_kpm_btn">Osadź KPM</string>
+    <string name="patch_start_patch_btn">Rozpocznij</string>
+    <string name="patch_start_unpatch_btn">Cofnij poprawkę</string>
+    <string name="patch_item_error">!!BŁĄD!!</string>
+    <string name="patch_item_bootimg">bootimg</string>
+    <string name="patch_item_bootimg_slot">Slot:</string>
+    <string name="patch_item_bootimg_dev">Urządzenie:</string>
+    <string name="patch_item_kernel">Jądro</string>
+    <string name="patch_item_kpimg">kpimg</string>
+    <string name="patch_item_kpimg_version">Wersja:</string>
+    <string name="patch_item_kpimg_comile_time">Czas:</string>
+    <string name="patch_item_kpimg_config">Konfiguracja:</string>
+    <string name="patch_item_new_extra_kpm">Osadź nowy</string>
+    <string name="patch_item_existed_extra_kpm">Istnieje</string>
+    <string name="patch_item_extra_name">Nazwa:</string>
+    <string name="patch_item_extra_version">Wersja:</string>
+    <string name="patch_item_extra_author">Autor:</string>
+    <string name="patch_item_extra_kpm_license">Licencja:</string>
+    <string name="patch_item_extra_kpm_desciption">Opis:</string>
+    <string name="patch_item_extra_args">Argumenty:</string>
+    <string name="patch_item_extra_event">Zdarzenie:</string>
+    <string name="patch_item_skey">SuperKlucz</string>
+    <string name="patch_item_set_skey_label">SuperKlucz powinien mieć od 8 do 63 znaków i zawierać cyfry i litery, ale bez znaków specjalnych.</string>
+
+    <string name="home_kernel">Wersja jądra</string>
+    <string name="home_manager_version">Wersja menedżera</string>
+    <string name="home_fingerprint">Odcisk palca</string>
+
+    <string name="home_selinux_status">Status SELinux</string>
+    <string name="home_selinux_status_disabled">Wyłączony</string>
+    <string name="home_selinux_status_enforcing">Egzekwowany</string>
+    <string name="home_selinux_status_permissive">Pobłażliwy</string>
+    <string name="home_selinux_status_unknown">Nieznany</string>
+
+    <string name="home_device_info">Urządzenie</string>
+    <string name="home_system_version">Wersja systemu</string>
+    <string name="home_kpatch_version">Wersja KernelPatch</string>
+    <string name="home_su_path">Plik wykonywalny su</string>
+    <string name="home_apatch_version">Wersja FolkPatch</string>
+
+    <string name="kpm">KPModule</string>
+    <string name="kpm_kp_not_installed">KernelPatch nie jest zainstalowany</string>
+    <string name="kpm_add_kpm">Dodaj KPM</string>
+    <string name="kpm_load">Załaduj</string>
+    <string name="kpm_install">Zainstaluj</string>
+    <string name="kpm_embed">Osadź</string>
+    <string name="kpm_load_toast_succ">Ładowanie powiodło się</string>
+    <string name="kpm_load_toast_failed">Ładowanie nie powiodło się</string>
+    <string name="kpm_unload_confirm">Odładować moduł %s?</string>
+    <string name="kpm_unload">Odładuj</string>
+    <string name="kpm_control">Sterowanie</string>
+    <string name="kpm_apm_empty">Brak załadowanych modułów</string>
+    <string name="kpm_version">Wersja</string>
+    <string name="kpm_license">Licencja</string>
+    <string name="kpm_author">Autor</string>
+    <string name="kpm_desc">Opis</string>
+    <string name="kpm_args">Argumenty</string>
+
+    <string name="su_title">Superużytkownik</string>
+    <string name="su_selinux_via_hook">Omiń przez hak</string>
+    <string name="su_pkg_excluded_label">Wyklucz</string>
+    <string name="su_pkg_excluded_setting_title">Wyklucz modyfikacje</string>
+    <string name="su_pkg_excluded_setting_summary">Włączenie tej opcji pozwoli APatch przywrócić wszelkie pliki zmodyfikowane przez moduły tej aplikacji.</string>
+    <string name="su_show_system_apps">Pokaż aplikacje systemowe</string>
+    <string name="su_hide_system_apps">Ukryj aplikacje systemowe</string>
+    <string name="su_refresh">Odśwież</string>
+
+    <string name="apm">APModule</string>
+    <string name="apm_not_installed">AndroidPatch nie jest zainstalowany</string>
+    <string name="apm_failed_to_enable">Nie udało się włączyć modułu: %s</string>
+    <string name="apm_failed_to_disable">Nie udało się wyłączyć modułu: %s</string>
+    <string name="apm_empty">Brak zainstalowanych modułów</string>
+    <string name="apm_remove">Usuń</string>
+    <string name="apm_install">Zainstaluj</string>
+    <string name="apm_uninstall_confirm">Odinstalować moduł %s?</string>
+    <string name="apm_uninstall_success">Moduł %s odinstalowany</string>
+    <string name="apm_uninstall_failed">Nie udało się odinstalować: %s</string>
+    <string name="apm_version">Wersja</string>
+    <string name="apm_author">Autor</string>
+    <string name="apm_desc">Opis</string>
+    <string name="apm_overlay_fs_not_available">Moduły są niedostępne, ponieważ OverlayFS jest wyłączony przez jądro!</string>
+    <string name="apm_magisk_conflict">Moduły są niedostępne z powodu konfliktu z Magisk!</string>
+    <string name="apm_reboot_to_apply">Uruchom ponownie, aby zastosować</string>
+    <string name="apm_changelog">Dziennik zmian</string>
+    <string name="apm_update">Aktualizuj</string>
+    <string name="apm_downloading">Pobieranie modułu: %s</string>
+    <string name="apm_start_downloading">Rozpocznij pobieranie: %s</string>
+    <string name="apm_new_version_available">Nowa wersja %s jest dostępna, kliknij, aby zaktualizować.</string>
+
+    <string name="hide_apatch_manager">Ukryj menedżera APatch</string>
+    <string name="hide_apatch_manager_summary">Zainstaluj aplikację proxy z losowym identyfikatorem pakietu i niestandardową etykietą aplikacji</string>
+    <string name="hide_apatch_dialog_new_manager_name">Nowa nazwa menedżera</string>
+    <string name="hide_apatch_dialog_summary">Będzie używana jako nowa etykieta aplikacji wyświetlana w launcherze</string>
+    <string name="hide_apatch_manager_failure">Nie udało się ukryć. Proszę zgłosić błąd!</string>
+
+    <string name="setting_reset_su_path">Resetuj ścieżkę su</string>
+    <string name="setting_reset_su_new_path">Nowa pełna ścieżka</string>
+
+    <string name="apm_webui_open">Otwórz</string>
+    <string name="apm_action">Akcja</string>
+    <string name="enable_web_debugging">Włącz debugowanie WebView</string>
+    <string name="enable_web_debugging_summary">Może być używane do debugowania WebUI. Włącz tylko w razie potrzeby.</string>
+    <string name="settings_apm_install_confirm">Potwierdź przed instalacją</string>
+    <string name="settings_apm_install_confirm_summary">Pokaż okno dialogowe potwierdzenia przed instalacją modułów</string>
+    <string name="apm_install_confirm_title">Instalacja modułu</string>
+    <string name="apm_install_confirm_content">Czy na pewno chcesz zainstalować %s?</string>
+
+    <string name="settings_donot_store_superkey">Nie przechowuj SuperKlucza lokalnie</string>
+    <string name="settings_donot_store_superkey_summary">Uwierzytelniaj SuperKlucz za każdym razem, gdy menedżer się uruchamia</string>
+
+    <string name="mode_select_page_title">Instalacja</string>
+    <string name="mode_select_page_patch_and_install">Poprawka i instalacja</string>
+    <string name="mode_select_page_select_file">Wybierz obraz startowy do poprawienia</string>
+    <string name="mode_select_page_install_inactive_slot">Zainstaluj w nieaktywnym slocie (Po OTA)</string>
+    <string name="mode_select_page_install_inactive_slot_warning">Twoje urządzenie zostanie **WYMUSZONE** do uruchomienia w aktualnie nieaktywnym slocie po ponownym uruchomieniu!\nUżyj tej opcji tylko po zakończeniu OTA.\nKontynuować?</string>
+
+    <string name="home_dialog_auth_fail_title">Uwierzytelnianie nie powiodło się</string>
+    <string name="home_dialog_auth_fail_content">Nie można uwierzytelnić SuperKlucza, dlatego APatch nie może działać prawidłowo.\nOto kilka możliwych przyczyn niepowodzenia uwierzytelnienia:\n1. Nie poprawiłeś boot.img za pomocą KernelPatch.\n2. Poprawiony obraz boot.img nie został wgrany.\n3. SuperKlucz jest nieprawidłowy lub zawiera znaki specjalne.\n4. Twoje urządzenie nie obsługuje APatch i KernelPatch.\n\nProszę sprawdzić i spróbować ponownie. Jeśli nadal występują problemy, zawsze można zadać pytania na stronie problemów oficjalnego repozytorium.</string>
+
+    <string name="home_more_menu_feedback_or_suggestion">Opinie lub sugestie</string>
+    <string name="home_more_menu_about">O aplikacji</string>
+
+    <string name="home_dialog_uninstall_title">Odinstaluj</string>
+    
+    <string name="home_dialog_uninstall_ap_only">Odinstaluj tylko poprawkę</string>
+    <string name="home_dialog_uninstall_all">Odinstaluj całkowicie</string>
+
+    <string name="kpm_control_dialog_title">Sterowanie KPM</string>
+    <string name="kpm_control_dialog_content">Proszę wprowadzić parametry sterowania:</string>
+    <string name="kpm_control_paramters">Parametry</string>
+    <string name="kpm_control_outMsg">Wyjście</string>
+    <string name="kpm_control_ok">Sukces!</string>
+    <string name="kpm_control_failed">Niepowodzenie!</string>
+    
+    <string name="settings_night_mode_follow_sys">Tryb ciemny zgodny z systemem</string>
+    <string name="settings_night_mode_follow_sys_summary">Automatycznie przełączaj tryb ciemny na podstawie ustawień systemowych</string>
+    <string name="settings_night_theme_enabled">Tryb ciemny</string>
+    
+    <string name="settings_use_system_color_theme">Motyw kolorów systemowych</string>
+    <string name="settings_use_system_color_theme_summary">Użyj motywu kolorów wygenerowanego z tapety przez system</string>
+    <string name="settings_custom_color_theme">Motyw kolorów</string>
+
+    <string name="amber_theme">Bursztyn</string>
+    <string name="blue_theme">Niebieski</string>
+    <string name="blue_grey_theme">Niebieskoszary</string>
+    <string name="brown_theme">Brązowy</string>
+    <string name="cyan_theme">Cyjanowy</string>
+    <string name="deep_orange_theme">Ciemnopomarańczowy</string>
+    <string name="deep_purple_theme">Ciemnofioletowy</string>
+    <string name="green_theme">Zielony</string>
+    <string name="indigo_theme">Indygo</string>
+    <string name="light_blue_theme">Jasnoniebieski</string>
+    <string name="light_green_theme">Jasnozielony</string>
+    <string name="lime_theme">Limonkowy</string>
+    <string name="orange_theme">Pomarańczowy</string>
+    <string name="pink_theme">Różowy</string>
+    <string name="purple_theme">Fioletowy</string>
+    <string name="red_theme">Czerwony</string>
+    <string name="sakura_theme">Sakura</string>
+    <string name="teal_theme">Błękitny</string>
+    <string name="yellow_theme">Żółty</string>
+
+    <string name="about_app_desc">Rozwiązanie root oparte na jądrze, które obsługuje moduły jądra i haki funkcji jądra bez ponownej kompilacji jądra.</string>
+    <string name="about_powered_by">Napędzane przez %1$s</string>
+    <string name="about_telegram_group">Grupa Telegram</string>
+    
+    <!-- Online Module Strings -->
+    <string name="online_module_title">Moduł systemu online</string>
+    <string name="online_module_download_start">Rozpocznij pobieranie: %s</string>
+    <string name="online_module_download_complete">Pobieranie zakończone: %s</string>
+    <string name="online_module_download_notification">Pobieranie %s. Sprawdź panel powiadomień o postępach i folder Pobrane dla ukończonego pliku.</string>
+
+    <!-- Online KPM Strings -->
+    <string name="online_kpm_title">Moduły jądra online</string>
+    <string name="online_kpm_download_start">Rozpocznij pobieranie: %s</string>
+    <string name="online_kpm_download_complete">Pobieranie zakończone: %s</string>
+    <string name="online_kpm_download_notification">Pobieranie %s. Sprawdź panel powiadomień o postępach i folder Pobrane dla ukończonego pliku.</string>
+
+    <!-- Crash Handle Strings -->
+    <string name="crash_handle_title">Raport awarii</string>
+    <string name="crash_handle_copy">Kopiuj</string>
+
+    <!-- About Screen Strings -->
+    <string name="about_app_version">Wersja aplikacji</string>
+    <string name="about_github">GitHub</string>
+    <string name="about_telegram_channel">Kanał Telegram</string>
+
+    <!-- App Title Strings -->
+    <string name="app_title_fpatch">FPatch</string>
+    <string name="app_title_apatch_folk">APatch Folk</string>
+    <string name="app_title_apatchx">APatch X</string>
+    <string name="app_title_apatch">APatch</string>
+    <string name="app_title_folkpatch">FolkPatch</string>
+    <string name="app_title_kernelpatch">KernelPatch</string>
+
+    <string name="settings_app_dpi">DPI aplikacji</string>
+    <string name="settings_lite_mode">Tryb uproszczony</string>
+    <string name="settings_lite_mode_mode_summary">Włącz tryb uproszczony dla lepszej wydajności</string>
+    <string name="settings_force_overlayfs_mode">Wymuś tryb OverlayFS</string>
+    <string name="settings_force_overlayfs_mode_summary">Wymuś użycie OverlayFS dla modułów</string>
+    <string name="settings_app_title">Tytuł aplikacji</string>
+    <string name="settings_custom_background">Niestandardowe tło</string>
+    <string name="settings_custom_background_enabled">Włączono niestandardowe tło</string>
+    <string name="settings_custom_background_opacity">Przezroczystość karty</string>
+    <string name="settings_custom_background_dim">Przyciemnienie tła</string>
+    <string name="settings_select_background_image">Wybierz obraz tła</string>
+    <string name="settings_custom_background_summary">Ustaw niestandardowy obraz tła</string>
+    <string name="settings_custom_background_saved">Tło zapisane pomyślnie</string>
+    <string name="settings_custom_background_error">Nie udało się zapisać tła</string>
+    <string name="settings_background_selected">Wybrano tło</string>
+    <string name="settings_background_image_cleared">Usunięto obraz tła</string>
+    <string name="settings_clear_background">Wyczyść tło</string>
+    <string name="settings_clear_background_confirm">Czy na pewno chcesz wyczyścić obraz tła?</string>
+    <string name="settings_launcher_icon">Ikona launchera</string>
+    <string name="launcher_icon_default">FolkPatch Anime</string>
+    <string name="launcher_icon_classic">FolkPatch</string>
+    <string name="launcher_icon_apatch">APatch</string>
+    <string name="launcher_icon_kernelsu">KernelSU</string>
+    <string name="launcher_icon_kernelsu_next">KernelSU Next</string>
+    <string name="launcher_icon_kitsune">Kitsune Mask</string>
+    <string name="launcher_icon_magisk">Magisk</string>
+    
+    <!-- Hide Settings Strings -->
+    <string name="home_hide_su_path">Ukryj ścieżkę pliku wykonywalnego su</string>
+    <string name="home_hide_kpatch_version">Ukryj wersję poprawki jądra</string>
+    <string name="home_hide_fingerprint">Ukryj odcisk palca</string>
+    <string name="home_hide_su_path_summary">Ukryj ścieżkę pliku wykonywalnego su w karcie informacyjnej</string>
+    <string name="home_hide_kpatch_version_summary">Ukryj wersję poprawki jądra w karcie informacyjnej</string>
+    <string name="home_hide_fingerprint_summary">Ukryj odcisk palca w karcie informacyjnej</string>
+</resources>
