@@ -52,7 +52,7 @@
     <string name="home_install_unknown">Not installed or authenticated</string>
     <string name="home_install_unknown_summary">Click to install</string>
     <string name="home_click_to_install">Click to install</string>
-    <string name="home_working">Working 😋</string>
+    <string name="home_working">Working</string>
     <string name="home_kp_need_update">New version available</string>
     <string name="home_kp_cando_update">Update</string>
 

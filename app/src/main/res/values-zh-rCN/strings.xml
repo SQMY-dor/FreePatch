@@ -47,7 +47,7 @@
     <string name="home_install_unknown">未安装或未认证</string>
     <string name="home_install_unknown_summary">点击安装</string>
     <string name="home_click_to_install">点击安装</string>
-    <string name="home_working">工作中 😋</string>
+    <string name="home_working">工作中</string>
     <string name="home_kp_need_update">有新版本可用</string>
     <string name="home_kp_cando_update">更新</string>
 

@@ -37,9 +37,9 @@
     <string name="home_not_installed">未インストール</string>
     <string name="home_install_unknown">不明</string>
     <string name="home_install_unknown_summary">タップしてインストール</string>
-    <string name="home_click_to_install">タップしてインストール</string>
-    <string name="home_working">動作中 😋</string>
-    <string name="home_kp_need_update">新しいバージョンが利用可能</string>
+    <string name="home_click_to_install">クリックしてインストール</string>
+    <string name="home_working">動作中</string>
+    <string name="home_kp_need_update">新しいバージョンが利用可能です</string>
     <string name="home_kp_cando_update">アップデート</string>
     <string name="home_installing">インストール中</string>
     <string name="kpatch_version">バージョン: %s</string>

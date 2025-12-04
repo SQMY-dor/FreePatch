@@ -45,9 +45,9 @@
     <string name="home_not_installed">尚未安裝</string>
     <string name="home_install_unknown">未安裝或未鑒權</string>
     <string name="home_install_unknown_summary">點擊以安裝</string>
-    <string name="home_click_to_install">點擊以開始安裝</string>
-    <string name="home_working">工作中 😋</string>
-    <string name="home_kp_need_update">已有新版本可供使用</string>
+    <string name="home_click_to_install">點擊安裝</string>
+    <string name="home_working">工作中</string>
+    <string name="home_kp_need_update">有新版本可用</string>
     <string name="home_kp_cando_update">更新</string>
 
     <string name="home_installing">安裝中</string>

@@ -52,7 +52,7 @@
     <string name="home_install_unknown">Не установлено или не проверено</string>
     <string name="home_install_unknown_summary">Нажмите для установки</string>
     <string name="home_click_to_install">Нажмите для установки</string>
-    <string name="home_working">Работает 😋</string>
+    <string name="home_working">Работает</string>
     <string name="home_kp_need_update">Доступна новая версия</string>
     <string name="home_kp_cando_update">Обновить</string>
 

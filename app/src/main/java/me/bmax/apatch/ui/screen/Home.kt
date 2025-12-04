@@ -38,6 +38,7 @@ import androidx.compose.material.icons.outlined.SystemUpdate
 import androidx.compose.material3.AlertDialogDefaults
 import androidx.compose.material3.BasicAlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -71,6 +72,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.ui.window.DialogWindowProvider
@@ -473,6 +475,28 @@ private fun TopBar(
 }
 
 @Composable
+private fun StatusBadge(
+    text: String,
+    containerColor: Color = MaterialTheme.colorScheme.onPrimary,
+    contentColor: Color = MaterialTheme.colorScheme.primary
+) {
+    Surface(
+        color = containerColor.copy(alpha = 1f),
+        shape = RoundedCornerShape(4.dp),
+        tonalElevation = 0.dp,
+        shadowElevation = 0.dp
+    ) {
+        Text(
+            text = text,
+            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+            style = MaterialTheme.typography.labelSmall,
+            color = contentColor.copy(alpha = 1f),
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+
+@Composable
 private fun KStatusCard(
     kpState: APApplication.State, apState: APApplication.State, navigator: DestinationsNavigator
 ) {
@@ -557,10 +581,16 @@ private fun KStatusCard(
                 ) {
                     when (kpState) {
                         APApplication.State.KERNELPATCH_INSTALLED -> {
-                            Text(
-                                text = stringResource(R.string.home_working),
-                                style = MaterialTheme.typography.titleMedium
-                            )
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Text(
+                                    text = stringResource(R.string.home_working),
+                                    style = MaterialTheme.typography.titleMedium
+                                )
+                                Spacer(Modifier.width(8.dp))
+                                StatusBadge(
+                                    text = if (apState == APApplication.State.ANDROIDPATCH_INSTALLED) "Full" else "Half"
+                                )
+                            }
                         }
 
                         APApplication.State.KERNELPATCH_NEED_UPDATE, APApplication.State.KERNELPATCH_NEED_REBOOT -> {

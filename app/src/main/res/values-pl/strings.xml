@@ -48,7 +48,7 @@
     <string name="home_install_unknown">Nie zainstalowano lub nie uwierzytelniono</string>
     <string name="home_install_unknown_summary">Kliknij, aby zainstalować</string>
     <string name="home_click_to_install">Kliknij, aby zainstalować</string>
-    <string name="home_working">Działa 😋</string>
+    <string name="home_working">Działa</string>
     <string name="home_kp_need_update">Dostępna nowa wersja</string>
     <string name="home_kp_cando_update">Aktualizuj</string>
 
