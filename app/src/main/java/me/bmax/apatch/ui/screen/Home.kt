@@ -534,7 +534,7 @@ private fun KStatusCard(
         APApplication.State.KERNELPATCH_INSTALLED -> {
             if (BackgroundConfig.isCustomBackgroundEnabled) {
                 val opacity = BackgroundConfig.customBackgroundOpacity
-                val contentColor = if (opacity < 0.4f) {
+                val contentColor = if (opacity <= 0.1f) {
                     if (isDarkTheme) Color.White else Color.Black
                 } else {
                     MaterialTheme.colorScheme.onPrimary
@@ -695,7 +695,7 @@ private fun KStatusCard(
                         }
                     }, colors = if (BackgroundConfig.isCustomBackgroundEnabled && kpState == APApplication.State.KERNELPATCH_INSTALLED) {
                         val opacity = BackgroundConfig.customBackgroundOpacity
-                        val contentColor = if (opacity < 0.4f) {
+                        val contentColor = if (opacity <= 0.1f) {
                             if (isDarkTheme) Color.White else Color.Black
                         } else {
                             MaterialTheme.colorScheme.onPrimary
