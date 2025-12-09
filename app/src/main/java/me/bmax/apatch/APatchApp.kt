@@ -27,15 +27,34 @@ import java.util.Locale
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
+import coil.ImageLoader
+import coil.ImageLoaderFactory
+import coil.decode.GifDecoder
+import coil.decode.ImageDecoderDecoder
+import coil.util.DebugLogger
+
 lateinit var apApp: APApplication
 
 const val TAG = "APatch"
 
-class APApplication : Application(), Thread.UncaughtExceptionHandler {
+class APApplication : Application(), Thread.UncaughtExceptionHandler, ImageLoaderFactory {
     lateinit var okhttpClient: OkHttpClient
 
     init {
         Thread.setDefaultUncaughtExceptionHandler(this)
+    }
+
+    override fun newImageLoader(): ImageLoader {
+        return ImageLoader.Builder(this)
+            .components {
+                if (Build.VERSION.SDK_INT >= 28) {
+                    add(ImageDecoderDecoder.Factory())
+                } else {
+                    add(GifDecoder.Factory())
+                }
+            }
+            .logger(DebugLogger())
+            .build()
     }
 
     enum class State {

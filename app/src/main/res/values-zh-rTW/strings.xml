@@ -429,12 +429,13 @@
     <string name="theme_info">主題資訊</string>
 
     <!-- Grid Working Card Background -->
-    <string name="settings_grid_working_card_background">工作中卡片背景</string>
-    <string name="settings_grid_working_card_background_summary">自訂工作中卡片的背景圖片</string>
-    <string name="settings_grid_working_card_background_selected">已選擇背景</string>
+    <string name="settings_grid_working_card_background">工作卡片背景</string>
+    <string name="settings_grid_working_card_background_enabled">自定義卡片背景已啟用</string>
+    <string name="settings_grid_working_card_background_summary">為工作卡片設定自定義背景圖片</string>
+    <string name="settings_grid_working_card_background_selected">背景已選擇</string>
     <string name="settings_clear_grid_working_card_background">清除卡片背景</string>
     <string name="settings_clear_grid_working_card_background_confirm">確定要清除卡片背景圖片嗎？</string>
-    <string name="settings_grid_working_card_background_saved">卡片背景儲存成功</string>
-    <string name="settings_grid_working_card_background_error">卡片背景儲存失敗</string>
+    <string name="settings_grid_working_card_background_saved">卡片背景保存成功</string>
+    <string name="settings_grid_working_card_background_error">卡片背景保存失敗</string>
     <string name="settings_grid_working_card_background_cleared">卡片背景已清除</string>
 </resources>

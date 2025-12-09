@@ -432,4 +432,13 @@
     <string name="theme_import_action">引入</string>
     <string name="theme_import_confirm">道友确欲引入此仙府色章乎？</string>
     <string name="theme_info">色章天机</string>
+    <string name="settings_grid_working_card_background">本命法宝卡片法相</string>
+    <string name="settings_grid_working_card_background_enabled">卡片法相已激活</string>
+    <string name="settings_grid_working_card_background_summary">为本命卡片凝练自定义法相</string>
+    <string name="settings_grid_working_card_background_selected">法相已选定</string>
+    <string name="settings_clear_grid_working_card_background">散去卡片法相</string>
+    <string name="settings_clear_grid_working_card_background_confirm">道友确欲散去此卡片法相乎？</string>
+    <string name="settings_grid_working_card_background_saved">卡片法相凝练成功</string>
+    <string name="settings_grid_working_card_background_error">卡片法相凝练失败</string>
+    <string name="settings_grid_working_card_background_cleared">卡片法相已散去</string>
 </resources>

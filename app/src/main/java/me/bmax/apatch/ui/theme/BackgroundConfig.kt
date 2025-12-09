@@ -176,14 +176,44 @@ object BackgroundManager {
     private const val GRID_WORKING_CARD_BACKGROUND_FILENAME = "grid_working_card_background.jpg"
 
     /**
-     * 获取背景文件
+     * 获取文件扩展名
      */
-    private fun getBackgroundFile(context: Context): File {
-        return File(context.filesDir, BACKGROUND_FILENAME)
+    private fun getFileExtension(context: Context, uri: Uri): String {
+        return try {
+            val mimeType = context.contentResolver.getType(uri)
+            when {
+                mimeType?.contains("gif", true) == true -> ".gif"
+                mimeType?.contains("png", true) == true -> ".png"
+                mimeType?.contains("webp", true) == true -> ".webp"
+                else -> ".jpg"
+            }
+        } catch (e: Exception) {
+            ".jpg"
+        }
     }
 
-    private fun getGridWorkingCardBackgroundFile(context: Context): File {
-        return File(context.filesDir, GRID_WORKING_CARD_BACKGROUND_FILENAME)
+    /**
+     * 获取背景文件
+     */
+    private fun getBackgroundFile(context: Context, extension: String = ".jpg"): File {
+        return File(context.filesDir, "background$extension")
+    }
+
+    private fun getGridWorkingCardBackgroundFile(context: Context, extension: String = ".jpg"): File {
+        return File(context.filesDir, "grid_working_card_background$extension")
+    }
+
+    /**
+     * 清理旧的背景文件
+     */
+    private fun clearOldFiles(context: Context, baseName: String) {
+        val extensions = listOf(".jpg", ".png", ".gif", ".webp")
+        extensions.forEach { ext ->
+            val file = File(context.filesDir, "$baseName$ext")
+            if (file.exists()) {
+                file.delete()
+            }
+        }
     }
     
     /**
@@ -192,7 +222,11 @@ object BackgroundManager {
     suspend fun saveAndApplyCustomBackground(context: Context, uri: Uri): Boolean {
         return try {
             withContext(Dispatchers.IO) {
-                val savedUri = saveImageToInternalStorage(context, uri, getBackgroundFile(context))
+                val extension = getFileExtension(context, uri)
+                // 清理旧文件
+                clearOldFiles(context, "background")
+                
+                val savedUri = saveImageToInternalStorage(context, uri, getBackgroundFile(context, extension))
                 if (savedUri != null) {
                     Log.d(TAG, "图片保存成功，URI: $savedUri")
                     BackgroundConfig.updateCustomBackgroundUri(savedUri.toString())
@@ -216,7 +250,11 @@ object BackgroundManager {
     suspend fun saveAndApplyGridWorkingCardBackground(context: Context, uri: Uri): Boolean {
         return try {
             withContext(Dispatchers.IO) {
-                val savedUri = saveImageToInternalStorage(context, uri, getGridWorkingCardBackgroundFile(context))
+                val extension = getFileExtension(context, uri)
+                // 清理旧文件
+                clearOldFiles(context, "grid_working_card_background")
+                
+                val savedUri = saveImageToInternalStorage(context, uri, getGridWorkingCardBackgroundFile(context, extension))
                 if (savedUri != null) {
                     Log.d(TAG, "Grid卡片图片保存成功，URI: $savedUri")
                     BackgroundConfig.updateGridWorkingCardBackgroundUri(savedUri.toString())
@@ -239,10 +277,7 @@ object BackgroundManager {
     fun clearCustomBackground(context: Context) {
         try {
             // 删除背景文件
-            val file = getBackgroundFile(context)
-            if (file.exists()) {
-                file.delete()
-            }
+            clearOldFiles(context, "background")
             
             // 重置配置（只重置全局背景相关）
             BackgroundConfig.updateCustomBackgroundUri(null)
@@ -259,10 +294,7 @@ object BackgroundManager {
     fun clearGridWorkingCardBackground(context: Context) {
         try {
             // 删除背景文件
-            val file = getGridWorkingCardBackgroundFile(context)
-            if (file.exists()) {
-                file.delete()
-            }
+            clearOldFiles(context, "grid_working_card_background")
             
             // 重置配置
             BackgroundConfig.updateGridWorkingCardBackgroundUri(null)

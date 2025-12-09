@@ -30,6 +30,11 @@ import me.bmax.apatch.util.Version
 import androidx.compose.foundation.isSystemInDarkTheme
 
 import androidx.compose.ui.draw.alpha
+import coil.ImageLoader
+import coil.decode.GifDecoder
+import coil.decode.ImageDecoderDecoder
+import coil.request.ImageRequest
+import android.os.Build
 import me.bmax.apatch.apApp
 import me.bmax.apatch.util.Version.getManagerVersion
 
@@ -166,6 +171,7 @@ private fun StatusCardBig(
     apState: APApplication.State,
     onClick: () -> Unit
 ) {
+    val context = androidx.compose.ui.platform.LocalContext.current
     val isWorking = kpState == APApplication.State.KERNELPATCH_INSTALLED
     val isUpdate = kpState == APApplication.State.KERNELPATCH_NEED_UPDATE || kpState == APApplication.State.KERNELPATCH_NEED_REBOOT
     
@@ -214,9 +220,24 @@ private fun StatusCardBig(
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             if (useCustomGridBg) {
+                // Configure ImageLoader for GIF support explicitly
+                val imageLoader = ImageLoader.Builder(context)
+                    .components {
+                        if (Build.VERSION.SDK_INT >= 28) {
+                            add(ImageDecoderDecoder.Factory())
+                        } else {
+                            add(GifDecoder.Factory())
+                        }
+                    }
+                    .build()
+
                 Image(
                     painter = rememberAsyncImagePainter(
-                        model = BackgroundConfig.gridWorkingCardBackgroundUri,
+                        model = ImageRequest.Builder(context)
+                            .data(BackgroundConfig.gridWorkingCardBackgroundUri)
+                            .crossfade(true)
+                            .build(),
+                        imageLoader = imageLoader,
                         contentScale = ContentScale.Crop
                     ),
                     contentDescription = null,

@@ -435,12 +435,13 @@
     <string name="theme_info">魔法主题情报</string>
 
     <!-- Grid Working Card Background -->
-    <string name="settings_grid_working_card_background">神域背景绘卷</string>
-    <string name="settings_grid_working_card_background_summary">为神域展开卡片赋予独特的魔法绘卷</string>
-    <string name="settings_grid_working_card_background_selected">绘卷已展开</string>
-    <string name="settings_clear_grid_working_card_background">收起绘卷</string>
-    <string name="settings_clear_grid_working_card_background_confirm">确定要收起这张魔法绘卷吗？</string>
-    <string name="settings_grid_working_card_background_saved">绘卷铭刻成功</string>
-    <string name="settings_grid_working_card_background_error">绘卷铭刻失败</string>
-    <string name="settings_grid_working_card_background_cleared">绘卷已收起</string>
+    <string name="settings_grid_working_card_background">魔法契约卡片背景</string>
+    <string name="settings_grid_working_card_background_enabled">魔法卡片背景已生效</string>
+    <string name="settings_grid_working_card_background_summary">为契约卡片施加自定义幻象</string>
+    <string name="settings_grid_working_card_background_selected">幻象已选定</string>
+    <string name="settings_clear_grid_working_card_background">解除卡片幻象</string>
+    <string name="settings_clear_grid_working_card_background_confirm">确定要解除卡片上的幻象吗？</string>
+    <string name="settings_grid_working_card_background_saved">卡片幻象保存成功</string>
+    <string name="settings_grid_working_card_background_error">卡片幻象保存失败</string>
+    <string name="settings_grid_working_card_background_cleared">卡片幻象已解除</string>
 </resources>

@@ -438,4 +438,14 @@
     <string name="theme_import_action">Импорт</string>
     <string name="theme_import_confirm">Вы уверены, что хотите импортировать эту тему?</string>
     <string name="theme_info">Информация о теме</string>
+    <!-- Grid Working Card Background -->
+    <string name="settings_grid_working_card_background">Фон рабочей карточки</string>
+    <string name="settings_grid_working_card_background_enabled">Пользовательский фон карточки включен</string>
+    <string name="settings_grid_working_card_background_summary">Пользовательское фоновое изображение для рабочей карточки</string>
+    <string name="settings_grid_working_card_background_selected">Фон выбран</string>
+    <string name="settings_clear_grid_working_card_background">Очистить фон карточки</string>
+    <string name="settings_clear_grid_working_card_background_confirm">Вы уверены, что хотите очистить фоновое изображение карточки?</string>
+    <string name="settings_grid_working_card_background_saved">Фон карточки успешно сохранен</string>
+    <string name="settings_grid_working_card_background_error">Не удалось сохранить фон карточки</string>
+    <string name="settings_grid_working_card_background_cleared">Фон карточки очищен</string>
 </resources>

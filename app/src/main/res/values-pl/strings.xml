@@ -436,4 +436,14 @@
     <string name="theme_import_action">Importuj</string>
     <string name="theme_import_confirm">Czy na pewno chcesz zaimportować ten motyw?</string>
     <string name="theme_info">Informacje o motywie</string>
+    <!-- Grid Working Card Background -->
+    <string name="settings_grid_working_card_background">Tło karty roboczej</string>
+    <string name="settings_grid_working_card_background_enabled">Niestandardowe tło karty włączone</string>
+    <string name="settings_grid_working_card_background_summary">Niestandardowy obraz tła dla karty roboczej</string>
+    <string name="settings_grid_working_card_background_selected">Wybrano tło</string>
+    <string name="settings_clear_grid_working_card_background">Wyczyść tło karty</string>
+    <string name="settings_clear_grid_working_card_background_confirm">Czy na pewno chcesz wyczyścić obraz tła karty?</string>
+    <string name="settings_grid_working_card_background_saved">Tło karty zapisane pomyślnie</string>
+    <string name="settings_grid_working_card_background_error">Nie udało się zapisać tła karty</string>
+    <string name="settings_grid_working_card_background_cleared">Tło karty wyczyszczone</string>
 </resources>
