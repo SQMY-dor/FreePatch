@@ -418,4 +418,19 @@
     <string name="settings_theme_imported">魔法主题已唤醒</string>
     <string name="settings_theme_save_failed">封印魔法主题失败</string>
     <string name="settings_theme_import_failed">唤醒魔法主题失败</string>
+
+    <!-- Theme Strings -->
+    <string name="theme_export_title">封印魔法主题</string>
+    <string name="theme_import_title">唤醒魔法主题</string>
+    <string name="theme_name">魔法主题真名</string>
+    <string name="theme_type">魔法类型</string>
+    <string name="theme_type_phone">魔导手机</string>
+    <string name="theme_type_tablet">魔导石板</string>
+    <string name="theme_version">魔法等级</string>
+    <string name="theme_author">创造者</string>
+    <string name="theme_description">魔法描述</string>
+    <string name="theme_export_action">封印</string>
+    <string name="theme_import_action">唤醒</string>
+    <string name="theme_import_confirm">确定要唤醒此魔法主题吗？</string>
+    <string name="theme_info">魔法主题情报</string>
 </resources>

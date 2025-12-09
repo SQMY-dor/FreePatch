@@ -51,6 +51,7 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material.icons.filled.DeleteSweep
 import androidx.compose.material.icons.filled.Folder
+import androidx.compose.material.icons.filled.Dashboard
 
 import androidx.compose.ui.res.painterResource
 import androidx.compose.material3.AlertDialogDefaults
@@ -200,6 +201,11 @@ fun SettingScreen() {
         val showIconChooseDialog = remember { mutableStateOf(false) }
         if (showIconChooseDialog.value) {
             IconChooseDialog(showIconChooseDialog)
+        }
+
+        val showHomeLayoutChooseDialog = remember { mutableStateOf(false) }
+        if (showHomeLayoutChooseDialog.value) {
+            HomeLayoutChooseDialog(showHomeLayoutChooseDialog)
         }
 
         val showAppTitleDialog = remember { mutableStateOf(false) }
@@ -581,6 +587,20 @@ fun SettingScreen() {
                     color = MaterialTheme.colorScheme.outline
                 )
             }, leadingContent = { Icon(painterResource(id = R.drawable.settings), null) })
+
+            // Home Layout Style
+            ListItem(headlineContent = {
+                Text(text = stringResource(id = R.string.settings_home_layout_style))
+            }, modifier = Modifier.clickable {
+                showHomeLayoutChooseDialog.value = true
+            }, supportingContent = {
+                val currentStyle = prefs.getString("home_layout_style", "default")
+                Text(
+                    text = stringResource(homeLayoutStyleToString(currentStyle.toString())),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.outline
+                )
+            }, leadingContent = { Icon(Icons.Filled.Dashboard, null) })
 
             // Custom Background Settings
             
@@ -1474,6 +1494,14 @@ private fun iconPresetList(): List<IconPreset> {
 @Composable
 private fun iconNameToString(iconName: String): Int {
     return iconPresetList().find { it.name == iconName }?.nameId ?: R.string.launcher_icon_default
+}
+
+@Composable
+private fun homeLayoutStyleToString(style: String): Int {
+    return when (style) {
+        "kernelsu" -> R.string.settings_home_layout_grid
+        else -> R.string.settings_home_layout_default
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
