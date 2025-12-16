@@ -331,6 +331,12 @@
     <string name="launcher_icon_kernelsu_next">KernelSU Next</string>
     <string name="launcher_icon_kitsune">Mặt nạ Kitsune</string>
     <string name="launcher_icon_magisk">Magisk</string>
+    <string name="settings_grid_working_card_hide_check">Ẩn biểu tượng trạng thái</string>
+    <string name="settings_grid_working_card_hide_check_summary">Ẩn dấu kiểm hoặc biểu tượng cảnh báo trên thẻ đang hoạt động</string>
+    <string name="settings_grid_working_card_hide_text">Ẩn văn bản trạng thái</string>
+    <string name="settings_grid_working_card_hide_text_summary">Ẩn văn bản "Đang hoạt động" hoặc "Chưa cài đặt" trên thẻ làm việc</string>
+    <string name="settings_grid_working_card_hide_mode">Ẩn chế độ làm việc</string>
+    <string name="settings_grid_working_card_hide_mode_summary">Ẩn văn bản "Full" hoặc "Half" trên thẻ làm việc</string>
     <string name="launcher_icon_superroot">SuperRoot</string>
     
     <string name="su_exclude_all_title">Loại trừ hàng loạt</string>

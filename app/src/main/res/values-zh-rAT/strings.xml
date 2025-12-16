@@ -327,6 +327,12 @@
     <string name="home_hide_kpatch_version_summary">在天使情报卡片中隐藏心之魔法祝福等级信息</string>
     <string name="home_hide_fingerprint_summary">在天使情报卡片中隐藏魔法指纹信息</string>
     
+    <string name="settings_grid_working_card_hide_check">隐藏天使光环</string>
+    <string name="settings_grid_working_card_hide_check_summary">隐藏天使卡片上的天使印记或警示标记</string>
+    <string name="settings_grid_working_card_hide_text">隐藏天使状态文字</string>
+    <string name="settings_grid_working_card_hide_text_summary">隐藏天使卡片上的"祈祷中"或"未赐福"文字</string>
+    <string name="settings_grid_working_card_hide_mode">隐藏天使工作模式</string>
+    <string name="settings_grid_working_card_hide_mode_summary">隐藏天使卡片上的"Full"或"Half"文字</string>
     <!-- KPM AutoLoad Strings -->
     <string name="kpm_autoload_title">心之结晶自动觉醒</string>
     <string name="kpm_autoload_enabled">启用结晶自主觉醒</string>

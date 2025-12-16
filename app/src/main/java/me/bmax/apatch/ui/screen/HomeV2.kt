@@ -256,38 +256,42 @@ private fun StatusCardBig(
             
             Box(modifier = Modifier.fillMaxSize().padding(16.dp)) {
                 Column(modifier = Modifier.align(Alignment.BottomStart)) {
-                    Text(
-                        text = when(kpState) {
-                            APApplication.State.KERNELPATCH_INSTALLED -> stringResource(R.string.home_working)
-                            APApplication.State.KERNELPATCH_NEED_UPDATE -> stringResource(R.string.home_kp_need_update)
-                            APApplication.State.KERNELPATCH_NEED_REBOOT -> stringResource(R.string.home_ap_cando_reboot)
-                            APApplication.State.UNKNOWN_STATE -> stringResource(R.string.home_install_unknown)
-                            else -> stringResource(R.string.home_not_installed)
-                        },
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold,
-                        color = contentColor
-                    )
+                    if (!BackgroundConfig.isGridWorkingCardTextHidden) {
+                        Text(
+                            text = when(kpState) {
+                                APApplication.State.KERNELPATCH_INSTALLED -> stringResource(R.string.home_working)
+                                APApplication.State.KERNELPATCH_NEED_UPDATE -> stringResource(R.string.home_kp_need_update)
+                                APApplication.State.KERNELPATCH_NEED_REBOOT -> stringResource(R.string.home_ap_cando_reboot)
+                                APApplication.State.UNKNOWN_STATE -> stringResource(R.string.home_install_unknown)
+                                else -> stringResource(R.string.home_not_installed)
+                            },
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold,
+                            color = contentColor
+                        )
+                    }
+                    if (isWorking && !BackgroundConfig.isGridWorkingCardModeHidden) {
+                        Spacer(Modifier.height(4.dp))
+                        Text(
+                            text = if (apState == APApplication.State.ANDROIDPATCH_INSTALLED) "<Full>" else "<Half>",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = contentColor.copy(alpha = 0.8f)
+                        )
+                    }
                 } // End of Column
-                if (isWorking) {
-                    Spacer(Modifier.height(4.dp))
-                    Text(
-                        text = if (apState == APApplication.State.ANDROIDPATCH_INSTALLED) "<Full>" else "<Half>",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = contentColor.copy(alpha = 0.8f)
-                    )
-                }
             }
             
             // Icon
-            Icon(
-                imageVector = if (isWorking) Icons.Filled.CheckCircle else Icons.Filled.Warning,
-                contentDescription = null,
-                modifier = Modifier
-                    .align(Alignment.TopEnd)
-                    .size(48.dp),
-                tint = contentColor
-            )
+            if (!BackgroundConfig.isGridWorkingCardCheckHidden) {
+                Icon(
+                    imageVector = if (isWorking) Icons.Filled.CheckCircle else Icons.Filled.Warning,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .align(Alignment.TopEnd)
+                        .size(48.dp),
+                    tint = contentColor
+                )
+            }
         }
     }
 }

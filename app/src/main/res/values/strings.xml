@@ -25,7 +25,12 @@
     <string name="settings_global_namespace_mode">Global namespace mode</string>
     <string name="settings_global_namespace_mode_summary">All root sessions use the global mount namespace</string>
     <string name="settings_clear_super_key_dialog">Do you really want to proceed?</string>
-
+    <string name="settings_grid_working_card_hide_check">Hide status icon</string>
+    <string name="settings_grid_working_card_hide_check_summary">Hide the checkmark or warning icon on the working card</string>
+    <string name="settings_grid_working_card_hide_text">Hide status text</string>
+    <string name="settings_grid_working_card_hide_text_summary">Hide the \'Working\' or \'Not installed\' text on the working card</string>
+    <string name="settings_grid_working_card_hide_mode">Hide working mode</string>
+    <string name="settings_grid_working_card_hide_mode_summary">Hide the \'Full\' or \'Half\' text on the working card</string>
 
 
     <string name="su_exclude_all_title">Exclude All</string>
@@ -559,4 +564,5 @@
     <string name="home_info_mode_full">Full</string>
     <string name="home_info_mode_half">Half</string>
     <string name="home_zygisk_implement">Zygisk Implement</string>
+
 </resources>

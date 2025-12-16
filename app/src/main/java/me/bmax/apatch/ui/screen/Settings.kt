@@ -159,6 +159,7 @@ import androidx.compose.material.icons.filled.Dashboard
 import me.bmax.apatch.util.UpdateChecker
 import me.bmax.apatch.ui.component.UpdateDialog
 import androidx.compose.material.icons.filled.MusicNote
+import androidx.compose.material.icons.filled.VisibilityOff
 import me.bmax.apatch.ui.component.SearchAppBar
 
 @Composable
@@ -753,6 +754,18 @@ fun SettingScreen(navigator: DestinationsNavigator) {
             val gridClearTitle = stringResource(id = R.string.settings_clear_grid_working_card_background)
             val showGridClear = isKernelSuStyle && BackgroundConfig.isGridWorkingCardBackgroundEnabled && (matchAppearance || shouldShow(gridClearTitle))
 
+            val gridCheckHiddenTitle = stringResource(id = R.string.settings_grid_working_card_hide_check)
+            val gridCheckHiddenSummary = stringResource(id = R.string.settings_grid_working_card_hide_check_summary)
+            val showGridCheckHidden = isKernelSuStyle && (matchAppearance || shouldShow(gridCheckHiddenTitle, gridCheckHiddenSummary))
+
+            val gridTextHiddenTitle = stringResource(id = R.string.settings_grid_working_card_hide_text)
+            val gridTextHiddenSummary = stringResource(id = R.string.settings_grid_working_card_hide_text_summary)
+            val showGridTextHidden = isKernelSuStyle && (matchAppearance || shouldShow(gridTextHiddenTitle, gridTextHiddenSummary))
+
+            val gridModeHiddenTitle = stringResource(id = R.string.settings_grid_working_card_hide_mode)
+            val gridModeHiddenSummary = stringResource(id = R.string.settings_grid_working_card_hide_mode_summary)
+            val showGridModeHidden = isKernelSuStyle && (matchAppearance || shouldShow(gridModeHiddenTitle, gridModeHiddenSummary))
+
             // Custom Background (Single/Multi)
             val customBackgroundTitle = stringResource(id = R.string.settings_custom_background)
             val customBackgroundSummary = stringResource(id = R.string.settings_custom_background_summary)
@@ -999,6 +1012,50 @@ fun SettingScreen(navigator: DestinationsNavigator) {
                                         content = context.getString(R.string.settings_clear_grid_working_card_background_confirm),
                                         markdown = false
                                     )
+                                }
+                            )
+                        }
+                    }
+
+                    if (isKernelSuStyle) {
+                        // Hide Checkmark
+                         if (showGridCheckHidden) {
+                             SwitchItem(
+                                icon = Icons.Filled.VisibilityOff,
+                                title = gridCheckHiddenTitle,
+                                summary = gridCheckHiddenSummary,
+                                checked = BackgroundConfig.isGridWorkingCardCheckHidden,
+                                onCheckedChange = {
+                                    BackgroundConfig.setGridWorkingCardCheckHiddenState(it)
+                                    BackgroundConfig.save(context)
+                                }
+                            )
+                        }
+
+                        // Hide Text
+                         if (showGridTextHidden) {
+                             SwitchItem(
+                                icon = Icons.Filled.VisibilityOff,
+                                title = gridTextHiddenTitle,
+                                summary = gridTextHiddenSummary,
+                                checked = BackgroundConfig.isGridWorkingCardTextHidden,
+                                onCheckedChange = {
+                                    BackgroundConfig.setGridWorkingCardTextHiddenState(it)
+                                    BackgroundConfig.save(context)
+                                }
+                            )
+                        }
+
+                        // Hide Mode
+                         if (showGridModeHidden) {
+                             SwitchItem(
+                                icon = Icons.Filled.VisibilityOff,
+                                title = gridModeHiddenTitle,
+                                summary = gridModeHiddenSummary,
+                                checked = BackgroundConfig.isGridWorkingCardModeHidden,
+                                onCheckedChange = {
+                                    BackgroundConfig.setGridWorkingCardModeHiddenState(it)
+                                    BackgroundConfig.save(context)
                                 }
                             )
                         }

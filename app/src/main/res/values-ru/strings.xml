@@ -327,6 +327,12 @@
     <string name="launcher_icon_kitsune">Kitsune Mask</string>
     <string name="launcher_icon_magisk">Magisk</string>
     <string name="launcher_icon_superroot">SuperRoot</string>
+    <string name="settings_grid_working_card_hide_check">Скрыть значок статуса</string>
+    <string name="settings_grid_working_card_hide_check_summary">Скрыть галочку или значок предупреждения на рабочей карточке</string>
+    <string name="settings_grid_working_card_hide_text">Скрыть текст статуса</string>
+    <string name="settings_grid_working_card_hide_text_summary">Скрыть текст «Работает» или «Не установлено» на рабочей карточке</string>
+    <string name="settings_grid_working_card_hide_mode">Скрыть режим работы</string>
+    <string name="settings_grid_working_card_hide_mode_summary">Скрыть текст «Full» или «Half» на рабочей карточке</string>
     
     <!-- KPM AutoLoad Strings -->
     <string name="kpm_autoload_title">Автозагрузка KPM</string>

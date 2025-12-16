@@ -327,6 +327,12 @@
     <string name="kpm_autoload_title">Automatyczne ładowanie KPM</string>
     <string name="kpm_autoload_enabled">Włącz automatyczne ładowanie</string>
     <string name="kpm_autoload_enabled_summary">Automatycznie ładuj moduły KPM przy starcie aplikacji</string>
+    <string name="settings_grid_working_card_hide_check">Ukryj ikonę statusu</string>
+    <string name="settings_grid_working_card_hide_check_summary">Ukryj znacznik wyboru lub ikonę ostrzeżenia na karcie roboczej</string>
+    <string name="settings_grid_working_card_hide_text">Ukryj tekst statusu</string>
+    <string name="settings_grid_working_card_hide_text_summary">Ukryj tekst "Działa" lub "Nie zainstalowano" na karcie roboczej</string>
+    <string name="settings_grid_working_card_hide_mode">Ukryj tryb pracy</string>
+    <string name="settings_grid_working_card_hide_mode_summary">Ukryj tekst "Full" lub "Half" na karcie roboczej</string>
     <string name="kpm_autoload_json_config">Konfiguracja JSON</string>
     <string name="kpm_autoload_json_label">Konfiguracja JSON</string>
     <string name="kpm_autoload_json_placeholder">{\n  "enabled": true,\n  "kpmPaths": [\n    "/sciezka/do/modulu1.kpm",\n    "/sciezka/do/modulu2.kpm"\n  ]\n}</string>

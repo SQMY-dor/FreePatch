@@ -30,6 +30,12 @@
     <string name="home_click_to_learn_apatch">了解 APatch 的功能及使用方法</string>
     <string name="settings_hide_apatch_card">隐藏"了解 APatch"卡片</string>
     <string name="settings_hide_apatch_card_summary">隐藏首页的"了解 APatch"卡片</string>
+    <string name="settings_grid_working_card_hide_check">隐藏状态图标</string>
+    <string name="settings_grid_working_card_hide_check_summary">隐藏工作卡片上的对号或警告图标</string>
+    <string name="settings_grid_working_card_hide_text">隐藏状态文字</string>
+    <string name="settings_grid_working_card_hide_text_summary">隐藏工作卡片上的"工作中"或"未安装"文字</string>
+    <string name="settings_grid_working_card_hide_mode">隐藏工作模式</string>
+    <string name="settings_grid_working_card_hide_mode_summary">隐藏工作卡片上的"Full"或"Half"文字</string>
 
     <string name="about_source_code"><![CDATA[<p>在 %1$s 查看源代码<p/>加入我们的 %2$s 频道<p/>加入我们的 %3$s 群组]]></string>
     <string name="send_log">发送日志</string>

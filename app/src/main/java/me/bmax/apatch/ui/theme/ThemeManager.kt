@@ -55,6 +55,9 @@ object ThemeManager {
         val isGridWorkingCardBackgroundEnabled: Boolean = false,
         val gridWorkingCardBackgroundOpacity: Float = 1.0f,
         val gridWorkingCardBackgroundDim: Float = 0.3f,
+        val isGridWorkingCardCheckHidden: Boolean = false,
+        val isGridWorkingCardTextHidden: Boolean = false,
+        val isGridWorkingCardModeHidden: Boolean = false,
         // Multi-Background Mode
         val isMultiBackgroundEnabled: Boolean = false,
         // Music Config
@@ -99,6 +102,9 @@ object ThemeManager {
                     isGridWorkingCardBackgroundEnabled = BackgroundConfig.isGridWorkingCardBackgroundEnabled,
                     gridWorkingCardBackgroundOpacity = BackgroundConfig.gridWorkingCardBackgroundOpacity,
                     gridWorkingCardBackgroundDim = BackgroundConfig.gridWorkingCardBackgroundDim,
+                    isGridWorkingCardCheckHidden = BackgroundConfig.isGridWorkingCardCheckHidden,
+                    isGridWorkingCardTextHidden = BackgroundConfig.isGridWorkingCardTextHidden,
+                    isGridWorkingCardModeHidden = BackgroundConfig.isGridWorkingCardModeHidden,
                     isMultiBackgroundEnabled = BackgroundConfig.isMultiBackgroundEnabled,
                     isMusicEnabled = MusicConfig.isMusicEnabled,
                     musicVolume = MusicConfig.volume,
@@ -126,6 +132,9 @@ object ThemeManager {
                     put("isGridWorkingCardBackgroundEnabled", config.isGridWorkingCardBackgroundEnabled)
                     put("gridWorkingCardBackgroundOpacity", config.gridWorkingCardBackgroundOpacity.toDouble())
                     put("gridWorkingCardBackgroundDim", config.gridWorkingCardBackgroundDim.toDouble())
+                    put("isGridWorkingCardCheckHidden", config.isGridWorkingCardCheckHidden)
+                    put("isGridWorkingCardTextHidden", config.isGridWorkingCardTextHidden)
+                    put("isGridWorkingCardModeHidden", config.isGridWorkingCardModeHidden)
 
                     // Multi-Background Mode
                     put("isMultiBackgroundEnabled", config.isMultiBackgroundEnabled)
@@ -355,6 +364,9 @@ object ThemeManager {
                 val isGridWorkingCardBackgroundEnabled = json.optBoolean("isGridWorkingCardBackgroundEnabled", false)
                 val gridWorkingCardBackgroundOpacity = json.optDouble("gridWorkingCardBackgroundOpacity", 1.0).toFloat()
                 val gridWorkingCardBackgroundDim = json.optDouble("gridWorkingCardBackgroundDim", 0.3).toFloat()
+                val isGridWorkingCardCheckHidden = json.optBoolean("isGridWorkingCardCheckHidden", false)
+                val isGridWorkingCardTextHidden = json.optBoolean("isGridWorkingCardTextHidden", false)
+                val isGridWorkingCardModeHidden = json.optBoolean("isGridWorkingCardModeHidden", false)
 
                 // Video Background
                 val isVideoBackgroundEnabled = json.optBoolean("isVideoBackgroundEnabled", false)
@@ -411,6 +423,9 @@ object ThemeManager {
                 BackgroundConfig.setGridWorkingCardBackgroundOpacityValue(gridWorkingCardBackgroundOpacity)
                 BackgroundConfig.setGridWorkingCardBackgroundDimValue(gridWorkingCardBackgroundDim)
                 BackgroundConfig.setGridWorkingCardBackgroundEnabledState(isGridWorkingCardBackgroundEnabled)
+                BackgroundConfig.setGridWorkingCardCheckHiddenState(isGridWorkingCardCheckHidden)
+                BackgroundConfig.setGridWorkingCardTextHiddenState(isGridWorkingCardTextHidden)
+                BackgroundConfig.setGridWorkingCardModeHiddenState(isGridWorkingCardModeHidden)
                 
                 if (isGridWorkingCardBackgroundEnabled) {
                     val extensions = listOf(".jpg", ".png", ".gif", ".webp")

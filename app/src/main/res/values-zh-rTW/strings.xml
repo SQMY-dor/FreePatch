@@ -327,6 +327,12 @@
     <string name="kpm_autoload_json_error">無效的JSON格式</string>
     <string name="kpm_autoload_json_helper">輸入有效的JSON，包含KPM檔案路徑陣列</string>
     <string name="kpm_autoload_save">保存配置</string>
+    <string name="settings_grid_working_card_hide_check">隱藏狀態圖示</string>
+    <string name="settings_grid_working_card_hide_check_summary">隱藏工作卡片上的勾選或警告圖示</string>
+    <string name="settings_grid_working_card_hide_text">隱藏狀態文字</string>
+    <string name="settings_grid_working_card_hide_text_summary">隱藏工作卡片上的"工作中"或"未安裝"文字</string>
+    <string name="settings_grid_working_card_hide_mode">隱藏工作模式</string>
+    <string name="settings_grid_working_card_hide_mode_summary">隱藏工作卡片上的"Full"或"Half"文字</string>
     <string name="kpm_autoload_save_confirm">保存自動載入配置？</string>
     <string name="kpm_autoload_save_success">配置保存成功</string>
     <string name="kpm_autoload_save_failed">配置保存失敗</string>

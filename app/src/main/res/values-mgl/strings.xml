@@ -329,6 +329,12 @@
     <string name="home_hide_su_path_summary">在魔法情报卡片中隐藏魔法使路径</string>
     <string name="home_hide_kpatch_version_summary">在魔法情报卡片中隐藏心之核心契约等级信息</string>
     <string name="home_hide_fingerprint_summary">在魔法情报卡片中隐藏魔法指纹信息</string>
+    <string name="settings_grid_working_card_hide_check">魔法少女隐身术</string>
+    <string name="settings_grid_working_card_hide_check_summary">隐藏魔法少女卡片上的魔法符印或警示标记</string>
+    <string name="settings_grid_working_card_hide_text">魔法少女文字隐身术</string>
+    <string name="settings_grid_working_card_hide_text_summary">隐藏魔法少女卡片上的"神域展开"或"未觉醒"文字</string>
+    <string name="settings_grid_working_card_hide_mode">魔法少女模式隐身术</string>
+    <string name="settings_grid_working_card_hide_mode_summary">隐藏魔法少女卡片上的"Full"或"Half"文字</string>
     <!-- KPM AutoLoad Strings -->
     <string name="kpm_autoload_title">心之结晶自动觉醒</string>
     <string name="kpm_autoload_enabled">启用结晶自主觉醒</string>

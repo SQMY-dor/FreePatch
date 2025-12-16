@@ -327,6 +327,12 @@
     <string name="home_hide_su_path_summary">于仙门事宜仙笺，隐登仙令符之路</string>
     <string name="home_hide_kpatch_version_summary">于仙门事宜仙笺，隐道核符箓篇次之宜</string>
     <string name="home_hide_fingerprint_summary">于仙门事宜仙笺，隐仙门指印之宜</string>
+    <string name="settings_grid_working_card_hide_check">隐仙符标记</string>
+    <string name="settings_grid_working_card_hide_check_summary">隐仙术卡片之符印或警示</string>
+    <string name="settings_grid_working_card_hide_text">隐仙术卡片之文字</string>
+    <string name="settings_grid_working_card_hide_text_summary">隐仙术卡片上"闭关修炼中中"或"未入仙门"文字</string>
+    <string name="settings_grid_working_card_hide_mode">隐仙术卡片之道法</string>
+    <string name="settings_grid_working_card_hide_mode_summary">隐仙术卡片上"Full"或"Half"文字</string>
     <!-- KPM AutoLoad Strings -->
     <string name="kpm_autoload_title">道核仙符自动引符</string>
     <string name="kpm_autoload_enabled">启自动引符</string>

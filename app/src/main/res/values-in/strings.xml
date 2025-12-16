@@ -327,6 +327,12 @@
     <string name="kpm_autoload_json_placeholder">{\n  "enabled": true,\n  "kpmPaths": [\n    "/path/to/module1.kpm",\n    "/path/to/module2.kpm"\n  ]\n}</string>
     <string name="kpm_autoload_json_error">Format JSON tidak valid</string>
     <string name="kpm_autoload_json_helper">Masukkan JSON yang valid dengan array jalur file KPM</string>
+    <string name="settings_grid_working_card_hide_check">Sembunyikan ikon status</string>
+    <string name="settings_grid_working_card_hide_check_summary">Sembunyikan tanda centang atau ikon peringatan pada kartu kerja</string>
+    <string name="settings_grid_working_card_hide_text">Sembunyikan teks status</string>
+    <string name="settings_grid_working_card_hide_text_summary">Sembunyikan teks "Bekerja" atau "Tidak terinstal" pada kartu kerja</string>
+    <string name="settings_grid_working_card_hide_mode">Sembunyikan mode kerja</string>
+    <string name="settings_grid_working_card_hide_mode_summary">Sembunyikan teks "Full" atau "Half" pada kartu kerja</string>
     <string name="kpm_autoload_save">Simpan konfigurasi</string>
     <string name="kpm_autoload_save_confirm">Simpan konfigurasi muat otomatis?</string>
     <string name="kpm_autoload_save_success">Konfigurasi berhasil disimpan</string>

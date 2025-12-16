@@ -40,6 +40,12 @@ object BackgroundConfig {// State
         private set
     var gridWorkingCardBackgroundDim: Float by mutableStateOf(0.3f)
         private set
+    var isGridWorkingCardCheckHidden: Boolean by mutableStateOf(false)
+        private set
+    var isGridWorkingCardTextHidden: Boolean by mutableStateOf(false)
+        private set
+    var isGridWorkingCardModeHidden: Boolean by mutableStateOf(false)
+        private set
 
     // Multi-Background Mode
     var isMultiBackgroundEnabled: Boolean by mutableStateOf(false)
@@ -69,6 +75,9 @@ object BackgroundConfig {// State
     private const val KEY_GRID_WORKING_CARD_BACKGROUND_ENABLED = "grid_working_card_background_enabled"
     private const val KEY_GRID_WORKING_CARD_BACKGROUND_OPACITY = "grid_working_card_background_opacity"
     private const val KEY_GRID_WORKING_CARD_BACKGROUND_DIM = "grid_working_card_background_dim"
+    private const val KEY_GRID_WORKING_CARD_CHECK_HIDDEN = "grid_working_card_check_hidden"
+    private const val KEY_GRID_WORKING_CARD_TEXT_HIDDEN = "grid_working_card_text_hidden"
+    private const val KEY_GRID_WORKING_CARD_MODE_HIDDEN = "grid_working_card_mode_hidden"
 
     private const val KEY_MULTI_BACKGROUND_ENABLED = "multi_background_enabled"
     private const val KEY_HOME_BACKGROUND_URI = "home_background_uri"
@@ -146,6 +155,27 @@ object BackgroundConfig {// State
     }
 
     /**
+     * 设置Grid布局工作中卡片Check隐藏状态
+     */
+    fun setGridWorkingCardCheckHiddenState(hidden: Boolean) {
+        isGridWorkingCardCheckHidden = hidden
+    }
+
+    /**
+     * 设置Grid布局工作中卡片文字隐藏状态
+     */
+    fun setGridWorkingCardTextHiddenState(hidden: Boolean) {
+        isGridWorkingCardTextHidden = hidden
+    }
+
+    /**
+     * 设置Grid布局工作中卡片Full/Half隐藏状态
+     */
+    fun setGridWorkingCardModeHiddenState(hidden: Boolean) {
+        isGridWorkingCardModeHidden = hidden
+    }
+
+    /**
      * 设置自定义背景不透明度
      */
     fun setCustomBackgroundOpacityValue(opacity: Float) {
@@ -203,6 +233,9 @@ object BackgroundConfig {// State
             putBoolean(KEY_GRID_WORKING_CARD_BACKGROUND_ENABLED, isGridWorkingCardBackgroundEnabled)
             putFloat(KEY_GRID_WORKING_CARD_BACKGROUND_OPACITY, gridWorkingCardBackgroundOpacity)
             putFloat(KEY_GRID_WORKING_CARD_BACKGROUND_DIM, gridWorkingCardBackgroundDim)
+            putBoolean(KEY_GRID_WORKING_CARD_CHECK_HIDDEN, isGridWorkingCardCheckHidden)
+            putBoolean(KEY_GRID_WORKING_CARD_TEXT_HIDDEN, isGridWorkingCardTextHidden)
+            putBoolean(KEY_GRID_WORKING_CARD_MODE_HIDDEN, isGridWorkingCardModeHidden)
 
             putBoolean(KEY_MULTI_BACKGROUND_ENABLED, isMultiBackgroundEnabled)
             putString(KEY_HOME_BACKGROUND_URI, homeBackgroundUri)
@@ -232,6 +265,9 @@ object BackgroundConfig {// State
         val gridEnabled = prefs.getBoolean(KEY_GRID_WORKING_CARD_BACKGROUND_ENABLED, false)
         val gridOpacity = prefs.getFloat(KEY_GRID_WORKING_CARD_BACKGROUND_OPACITY, 1.0f)
         val gridDim = prefs.getFloat(KEY_GRID_WORKING_CARD_BACKGROUND_DIM, 0.3f)
+        val gridCheckHidden = prefs.getBoolean(KEY_GRID_WORKING_CARD_CHECK_HIDDEN, false)
+        val gridTextHidden = prefs.getBoolean(KEY_GRID_WORKING_CARD_TEXT_HIDDEN, false)
+        val gridModeHidden = prefs.getBoolean(KEY_GRID_WORKING_CARD_MODE_HIDDEN, false)
 
         val multiEnabled = prefs.getBoolean(KEY_MULTI_BACKGROUND_ENABLED, false)
         val homeUri = prefs.getString(KEY_HOME_BACKGROUND_URI, null)
@@ -255,6 +291,9 @@ object BackgroundConfig {// State
         isGridWorkingCardBackgroundEnabled = gridEnabled
         gridWorkingCardBackgroundOpacity = gridOpacity
         gridWorkingCardBackgroundDim = gridDim
+        isGridWorkingCardCheckHidden = gridCheckHidden
+        isGridWorkingCardTextHidden = gridTextHidden
+        isGridWorkingCardModeHidden = gridModeHidden
 
         isMultiBackgroundEnabled = multiEnabled
         homeBackgroundUri = homeUri
