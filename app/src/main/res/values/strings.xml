@@ -36,6 +36,7 @@
     <string name="settings_folkx_engine_title">FolkX Animation Engine</string>
     <string name="settings_folkx_engine_summary">Use smooth physics-based spring animation when switching between top-level pages</string>
     <string name="settings_folkx_animation_type">Animation Type</string>
+    <string name="settings_folkx_animation_speed">Animation Speed</string>
     <string name="settings_folkx_animation_linear">Linear Motion</string>
     <string name="settings_folkx_animation_spatial">Spatial Motion</string>
     <string name="settings_folkx_animation_fade">Fade In/Out</string>

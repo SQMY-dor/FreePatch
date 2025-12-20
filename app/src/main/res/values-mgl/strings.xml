@@ -183,6 +183,7 @@
     <string name="settings_folkx_engine_title">FolkX魔法动画引擎</string>
     <string name="settings_folkx_engine_summary">在顶层魔法页面切换时使用流畅的物理弹簧动画</string>
     <string name="settings_folkx_animation_type">魔法动画类型</string>
+    <string name="settings_folkx_animation_speed">异次元速度</string>
     <string name="settings_folkx_animation_linear">魔法线性运动</string>
     <string name="settings_folkx_animation_spatial">魔法空间运动</string>
     <string name="settings_folkx_animation_fade">魔法渐隐渐显</string>

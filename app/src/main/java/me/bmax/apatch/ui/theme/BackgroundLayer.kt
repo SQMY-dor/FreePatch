@@ -61,6 +61,7 @@ fun BackgroundLayer(currentRoute: String? = null) {
     val nightModeEnabled = prefs.getBoolean("night_mode_enabled", false)
     val folkXEngineEnabled = prefs.getBoolean("folkx_engine_enabled", true)
     val folkXAnimationType = prefs.getString("folkx_animation_type", "linear")
+    val folkXAnimationSpeed = prefs.getFloat("folkx_animation_speed", 1.0f)
     val isDarkTheme = if (darkThemeFollowSys) {
         isSystemInDarkTheme()
     } else {
@@ -172,52 +173,12 @@ fun BackgroundLayer(currentRoute: String? = null) {
                     val initialIndex = BottomBarDestination.entries.indexOfFirst { it.direction.route == initialRoute }
                     val targetIndex = BottomBarDestination.entries.indexOfFirst { it.direction.route == targetRoute }
 
+                    val stiffness = 300f * folkXAnimationSpeed * folkXAnimationSpeed
+                    val duration300 = (300 / folkXAnimationSpeed).toInt()
+                    val duration600 = (600 / folkXAnimationSpeed).toInt()
+
                     if (initialIndex != -1 && targetIndex != -1) {
-                        when (folkXAnimationType) {
-                            "spatial" -> {
-                                if (targetIndex > initialIndex) {
-                                    (scaleIn(initialScale = 0.9f, animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f)) + fadeIn(animationSpec = tween(300))) togetherWith
-                                            (scaleOut(targetScale = 1.1f, animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f)) + fadeOut(animationSpec = tween(300)))
-                                } else {
-                                    (scaleIn(initialScale = 1.1f, animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f)) + fadeIn(animationSpec = tween(300))) togetherWith
-                                            (scaleOut(targetScale = 0.9f, animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f)) + fadeOut(animationSpec = tween(300)))
-                                }
-                            }
-                            "fade" -> {
-                                fadeIn(animationSpec = tween(600)) togetherWith fadeOut(animationSpec = tween(600))
-                            }
-                            "vertical" -> {
-                                if (targetIndex > initialIndex) {
-                                    (slideInVertically(animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f), initialOffsetY = { height: Int -> height }) + fadeIn()) togetherWith
-                                            (slideOutVertically(animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f), targetOffsetY = { height: Int -> -height }) + fadeOut())
-                                } else {
-                                    (slideInVertically(animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f), initialOffsetY = { height: Int -> -height }) + fadeIn()) togetherWith
-                                            (slideOutVertically(animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f), targetOffsetY = { height: Int -> height }) + fadeOut())
-                                }
-                            }
-                            "diagonal" -> {
-                                if (targetIndex > initialIndex) {
-                                    (slideInHorizontally(animationSpec = tween(600), initialOffsetX = { width: Int -> width }) + 
-                                     slideInVertically(animationSpec = tween(600), initialOffsetY = { height: Int -> height }) + fadeIn(animationSpec = tween(600))) togetherWith
-                                            (slideOutHorizontally(animationSpec = tween(600), targetOffsetX = { width: Int -> -width }) + 
-                                             slideOutVertically(animationSpec = tween(600), targetOffsetY = { height: Int -> -height }) + fadeOut(animationSpec = tween(600)))
-                                } else {
-                                    (slideInHorizontally(animationSpec = tween(600), initialOffsetX = { width: Int -> -width }) + 
-                                     slideInVertically(animationSpec = tween(600), initialOffsetY = { height: Int -> -height }) + fadeIn(animationSpec = tween(600))) togetherWith
-                                            (slideOutHorizontally(animationSpec = tween(600), targetOffsetX = { width: Int -> width }) + 
-                                             slideOutVertically(animationSpec = tween(600), targetOffsetY = { height: Int -> height }) + fadeOut(animationSpec = tween(600)))
-                                }
-                            }
-                            else -> {
-                                if (targetIndex > initialIndex) {
-                                    (slideInHorizontally(animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f), initialOffsetX = { width: Int -> width }) + fadeIn()) togetherWith
-                                            (slideOutHorizontally(animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f), targetOffsetX = { width: Int -> -width }) + fadeOut())
-                                } else {
-                                    (slideInHorizontally(animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f), initialOffsetX = { width: Int -> -width }) + fadeIn()) togetherWith
-                                            (slideOutHorizontally(animationSpec = spring(dampingRatio = 0.8f, stiffness = 300f), targetOffsetX = { width: Int -> width }) + fadeOut())
-                                }
-                            }
-                        }
+                        fadeIn(animationSpec = tween(duration600)) togetherWith fadeOut(animationSpec = tween(duration600))
                     } else {
                         // Default fade for other transitions (e.g. to details)
                         fadeIn(animationSpec = tween(340)) togetherWith fadeOut(animationSpec = tween(340))

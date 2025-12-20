@@ -189,6 +189,7 @@
     <string name="settings_folkx_engine_title">Mesin Animasi FolkX</string>
     <string name="settings_folkx_engine_summary">Gunakan animasi pegas fisik yang halus saat beralih halaman tingkat atas</string>
     <string name="settings_folkx_animation_type">Jenis Animasi</string>
+    <string name="settings_folkx_animation_speed">Kecepatan Animasi</string>
     <string name="settings_folkx_animation_linear">Gerakan Linier</string>
     <string name="settings_folkx_animation_spatial">Gerakan Spasial</string>
     <string name="settings_folkx_animation_fade">Muncul/Hilang Bertahap</string>

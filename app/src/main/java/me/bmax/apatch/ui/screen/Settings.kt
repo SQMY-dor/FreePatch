@@ -63,6 +63,7 @@ import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material.icons.filled.Dashboard
 import androidx.compose.material.icons.filled.Fingerprint
 import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Animation
 import androidx.compose.material.icons.filled.FilterList
@@ -269,6 +270,11 @@ fun SettingScreen(navigator: DestinationsNavigator) {
         val showFolkXAnimationTypeDialog = remember { mutableStateOf(false) }
         if (showFolkXAnimationTypeDialog.value) {
             FolkXAnimationTypeDialog(showFolkXAnimationTypeDialog)
+        }
+
+        val showFolkXAnimationSpeedDialog = remember { mutableStateOf(false) }
+        if (showFolkXAnimationSpeedDialog.value) {
+            FolkXAnimationSpeedDialog(showFolkXAnimationSpeedDialog)
         }
 
         var showLogBottomSheet by remember { mutableStateOf(false) }
@@ -640,26 +646,43 @@ fun SettingScreen(navigator: DestinationsNavigator) {
                         enter = expandVertically(),
                         exit = shrinkVertically()
                     ) {
-                        ListItem(
-                            colors = ListItemDefaults.colors(containerColor = Color.Transparent),
-                            headlineContent = { Text(stringResource(R.string.settings_folkx_animation_type)) },
-                            supportingContent = {
-                                val currentType = prefs.getString("folkx_animation_type", "linear")
-                                Text(
-                                    text = when (currentType) {
-                                        "spatial" -> stringResource(R.string.settings_folkx_animation_spatial)
-                                        "fade" -> stringResource(R.string.settings_folkx_animation_fade)
-                                        "vertical" -> stringResource(R.string.settings_folkx_animation_vertical)
-                                        "diagonal" -> stringResource(R.string.settings_folkx_animation_diagonal)
-                                        else -> stringResource(R.string.settings_folkx_animation_linear)
-                                    },
-                                    style = MaterialTheme.typography.bodyMedium,
-                                    color = MaterialTheme.colorScheme.outline
-                                )
-                            },
-                            leadingContent = { Icon(Icons.Filled.Animation, null) },
-                            modifier = Modifier.clickable { showFolkXAnimationTypeDialog.value = true }
-                        )
+                        Column {
+                            ListItem(
+                                colors = ListItemDefaults.colors(containerColor = Color.Transparent),
+                                headlineContent = { Text(stringResource(R.string.settings_folkx_animation_type)) },
+                                supportingContent = {
+                                    val currentType = prefs.getString("folkx_animation_type", "linear")
+                                    Text(
+                                        text = when (currentType) {
+                                            "spatial" -> stringResource(R.string.settings_folkx_animation_spatial)
+                                            "fade" -> stringResource(R.string.settings_folkx_animation_fade)
+                                            "vertical" -> stringResource(R.string.settings_folkx_animation_vertical)
+                                            "diagonal" -> stringResource(R.string.settings_folkx_animation_diagonal)
+                                            else -> stringResource(R.string.settings_folkx_animation_linear)
+                                        },
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = MaterialTheme.colorScheme.outline
+                                    )
+                                },
+                                leadingContent = { Icon(Icons.Filled.Animation, null) },
+                                modifier = Modifier.clickable { showFolkXAnimationTypeDialog.value = true }
+                            )
+
+                            ListItem(
+                                colors = ListItemDefaults.colors(containerColor = Color.Transparent),
+                                headlineContent = { Text(stringResource(R.string.settings_folkx_animation_speed)) },
+                                supportingContent = {
+                                    val currentSpeed = prefs.getFloat("folkx_animation_speed", 1.0f)
+                                    Text(
+                                        text = "${currentSpeed}x",
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = MaterialTheme.colorScheme.outline
+                                    )
+                                },
+                                leadingContent = { Icon(Icons.Filled.Speed, null) },
+                                modifier = Modifier.clickable { showFolkXAnimationSpeedDialog.value = true }
+                            )
+                        }
                     }
 
                     // Global Namespace
@@ -2457,6 +2480,84 @@ fun FolkXAnimationTypeDialog(showDialog: MutableState<Boolean>) {
                     }
                 }
                 
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 24.dp),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    TextButton(onClick = { showDialog.value = false }) {
+                        Text(stringResource(id = android.R.string.cancel))
+                    }
+                }
+            }
+            val dialogWindowProvider = LocalView.current.parent as DialogWindowProvider
+            APDialogBlurBehindUtils.setupWindowBlurListener(dialogWindowProvider.window)
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FolkXAnimationSpeedDialog(showDialog: MutableState<Boolean>) {
+    val prefs = APApplication.sharedPreferences
+
+    BasicAlertDialog(
+        onDismissRequest = { showDialog.value = false }, properties = DialogProperties(
+            decorFitsSystemWindows = true,
+            usePlatformDefaultWidth = false,
+        )
+    ) {
+        Surface(
+            modifier = Modifier
+                .width(310.dp)
+                .wrapContentHeight(),
+            shape = RoundedCornerShape(30.dp),
+            tonalElevation = AlertDialogDefaults.TonalElevation,
+            color = AlertDialogDefaults.containerColor,
+        ) {
+            Column(modifier = Modifier.padding(24.dp)) {
+                Text(
+                    text = stringResource(R.string.settings_folkx_animation_speed),
+                    style = MaterialTheme.typography.headlineSmall,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+
+                val currentSpeed = prefs.getFloat("folkx_animation_speed", 1.0f)
+
+                Surface(
+                    shape = RoundedCornerShape(12.dp),
+                    color = AlertDialogDefaults.containerColor,
+                    tonalElevation = 2.dp
+                ) {
+                    Column {
+                        val speeds = listOf(
+                            0.5f to "0.5x",
+                            0.75f to "0.75x",
+                            1.0f to "1.0x",
+                            1.25f to "1.25x",
+                            1.5f to "1.5x",
+                            2.0f to "2.0x"
+                        )
+
+                        speeds.forEach { (speed, label) ->
+                            ListItem(
+                                headlineContent = { Text(label) },
+                                leadingContent = {
+                                    RadioButton(
+                                        selected = currentSpeed == speed,
+                                        onClick = null
+                                    )
+                                },
+                                modifier = Modifier.clickable {
+                                    prefs.edit().putFloat("folkx_animation_speed", speed).apply()
+                                    showDialog.value = false
+                                }
+                            )
+                        }
+                    }
+                }
+
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()

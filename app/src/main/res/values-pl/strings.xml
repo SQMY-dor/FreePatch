@@ -187,6 +187,7 @@
     <string name="settings_folkx_engine_title">Silnik animacji FolkX</string>
     <string name="settings_folkx_engine_summary">Używaj płynnych fizycznych animacji sprężynowych przy przełączaniu stron najwyższego poziomu</string>
     <string name="settings_folkx_animation_type">Typ animacji</string>
+    <string name="settings_folkx_animation_speed">Prędkość animacji</string>
     <string name="settings_folkx_animation_linear">Ruch liniowy</string>
     <string name="settings_folkx_animation_spatial">Ruch przestrzenny</string>
     <string name="settings_folkx_animation_fade">Przejście (Fade in/out)</string>

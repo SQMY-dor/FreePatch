@@ -182,6 +182,7 @@
     <string name="settings_folkx_engine_title">FolkX圣光动画引擎</string>
     <string name="settings_folkx_engine_summary">在顶层圣阵页面切换时使用圣域之光般的物理弹跳动画</string>
     <string name="settings_folkx_animation_type">圣光动画类型</string>
+    <string name="settings_folkx_animation_speed">圣光流转之速</string>
     <string name="settings_folkx_animation_linear">圣域线性运动</string>
     <string name="settings_folkx_animation_spatial">圣域空间运动</string>
     <string name="settings_folkx_animation_fade">圣光渐隐渐显</string>

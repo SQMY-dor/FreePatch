@@ -181,6 +181,7 @@
     <string name="settings_folkx_engine_title">FolkX仙法动画引擎</string>
     <string name="settings_folkx_engine_summary">在天阶仙页转换时使用仙域灵动的物理符箓动画</string>
     <string name="settings_folkx_animation_type">仙法动画类型</string>
+    <string name="settings_folkx_animation_speed">仙法动画速度</string>
     <string name="settings_folkx_animation_linear">仙域线性运动</string>
     <string name="settings_folkx_animation_spatial">仙域空间运动</string>
     <string name="settings_folkx_animation_fade">仙光渐隐渐显</string>
