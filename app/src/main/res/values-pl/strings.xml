@@ -201,6 +201,8 @@
     <string name="settings_apm_install_confirm_summary">Pokaż okno dialogowe potwierdzenia przed instalacją modułów</string>
     <string name="settings_show_disable_all_modules">Pokaż przycisk \'Wyłącz wszystkie moduły\'</string>
     <string name="settings_show_disable_all_modules_summary">Wyświetl przycisk na stronie modułów, aby wyłączyć wszystkie moduły naraz</string>
+    <string name="settings_module_sort_optimization">Optymalizacja sortowania modułów</string>
+    <string name="settings_module_sort_optimization_summary">Umieść moduły systemowe z WebUI i Action na początku listy</string>
     <string name="settings_show_more_module_info">Pokaż szczegóły modułu</string>
     <string name="settings_show_more_module_info_summary">Pokaż ID i rozmiar modułu na liście modułów</string>
     <string name="apm_install_confirm_title">Instalacja modułu</string>

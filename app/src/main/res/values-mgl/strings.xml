@@ -199,6 +199,8 @@
     <string name="settings_apm_stay_on_page_summary">星之魔法阵执行完魔法后不自动返回</string>
     <string name="settings_show_disable_all_modules">显示"禁用全部魔法阵"按钮</string>
     <string name="settings_show_disable_all_modules_summary">在魔法阵页面显示一键禁用所有魔法阵的按钮</string>
+    <string name="settings_module_sort_optimization">魔法阵排序优化</string>
+    <string name="settings_module_sort_optimization_summary">让系统魔法阵带有WebUI和Action的魔法阵排在前面</string>
     <string name="settings_show_more_module_info">显示魔法阵详细信息</string>
     <string name="settings_show_more_module_info_summary">在魔法阵列表中显示魔法阵 ID 和大小</string>
     <string name="apm_install_confirm_title">安装魔法阵</string>

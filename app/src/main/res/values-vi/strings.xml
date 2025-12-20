@@ -199,6 +199,8 @@
     <string name="settings_apm_stay_on_page_summary">Module hệ thống không tự trả về sau khi thực hiện hành động</string>
     <string name="settings_show_disable_all_modules">Hiển thị nút "Vô hiệu hóa tất cả module"</string>
     <string name="settings_show_disable_all_modules_summary">Hiển thị nút vô hiệu hóa tất cả module một cách nhanh chóng trên trang module</string>
+    <string name="settings_module_sort_optimization">Tối ưu hóa sắp xếp module</string>
+    <string name="settings_module_sort_optimization_summary">Đưa các module hệ thống có WebUI và Action lên đầu danh sách</string>
     <string name="apm_install_confirm_title">Cài đặt module</string>
     <string name="apm_install_confirm_content">Bạn có chắc chắn muốn cài đặt %s không?</string>
     <string name="settings_show_more_module_info">Hiển thị chi tiết module</string>

@@ -197,6 +197,8 @@
     <string name="settings_apm_install_confirm_summary">安裝模組前顯示確認對話框</string>
     <string name="settings_show_disable_all_modules">顯示「停用所有模組」按鈕</string>
     <string name="settings_show_disable_all_modules_summary">在模組頁面顯示一鍵停用所有模組的按鈕</string>
+    <string name="settings_module_sort_optimization">模組排序優化</string>
+    <string name="settings_module_sort_optimization_summary">讓系統模組帶有WebUI和Action的模組排在前面</string>
     <string name="apm_install_confirm_title">安裝模組</string>
     <string name="apm_install_confirm_content">確定要安裝 %s 嗎？</string>
     <string name="apm_disable_all_title">停用所有模組</string>

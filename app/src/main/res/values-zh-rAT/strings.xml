@@ -198,6 +198,8 @@
     <string name="settings_apm_stay_on_page_summary">星辰圣光阵执行完神力后不自动返回</string>
     <string name="settings_show_disable_all_modules">显示"禁用全部圣光阵"按钮</string>
     <string name="settings_show_disable_all_modules_summary">在圣光阵页面显示一键禁用所有圣光阵的按钮</string>
+    <string name="settings_module_sort_optimization">圣光阵排序优化</string>
+    <string name="settings_module_sort_optimization_summary">让系统圣光阵带有WebUI和Action的圣光阵排在前面</string>
     <string name="apm_install_confirm_title">安装圣光阵</string>
     <string name="settings_show_more_module_info">显示圣光阵详细信息</string>
     <string name="settings_show_more_module_info_summary">在圣光阵列表中显示圣光阵 ID 和大小</string>

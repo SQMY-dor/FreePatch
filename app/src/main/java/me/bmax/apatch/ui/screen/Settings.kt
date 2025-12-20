@@ -65,6 +65,7 @@ import androidx.compose.material.icons.filled.Fingerprint
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Animation
+import androidx.compose.material.icons.filled.FilterList
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.generated.destinations.ThemeStoreScreenDestination
 
@@ -1870,10 +1871,27 @@ fun SettingScreen(navigator: DestinationsNavigator) {
             val openBackupDirTitle = stringResource(id = R.string.settings_open_backup_dir)
             val showOpenBackupDir = aPatchReady && autoBackupModule && (matchModule || shouldShow(openBackupDirTitle))
 
-            val showModuleCategory = showAutoBackup || showOpenBackupDir || showMoreInfo
+            val moduleSortOptimizationTitle = stringResource(id = R.string.settings_module_sort_optimization)
+            val moduleSortOptimizationSummary = stringResource(id = R.string.settings_module_sort_optimization_summary)
+            var moduleSortOptimization by rememberSaveable { mutableStateOf(prefs.getBoolean("module_sort_optimization", true)) }
+            val showModuleSortOptimization = aPatchReady && (matchModule || shouldShow(moduleSortOptimizationTitle, moduleSortOptimizationSummary))
+
+            val showModuleCategory = showAutoBackup || showOpenBackupDir || showMoreInfo || showModuleSortOptimization
 
             if (showModuleCategory) {
                 SettingsCategory(icon = Icons.Filled.Extension, title = moduleTitle, isSearching = searchText.isNotEmpty()) {
+                    if (showModuleSortOptimization) {
+                        SwitchItem(
+                            icon = Icons.Filled.FilterList,
+                            title = moduleSortOptimizationTitle,
+                            summary = moduleSortOptimizationSummary,
+                            checked = moduleSortOptimization
+                        ) {
+                            prefs.edit { putBoolean("module_sort_optimization", it) }
+                            moduleSortOptimization = it
+                        }
+                    }
+
                     if (showMoreInfo) {
                         SwitchItem(
                             icon = Icons.Filled.Info,

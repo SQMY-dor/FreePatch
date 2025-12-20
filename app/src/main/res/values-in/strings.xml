@@ -203,6 +203,8 @@
     <string name="settings_apm_install_confirm_summary">Tampilkan dialog konfirmasi sebelum menginstal modul</string>
     <string name="settings_show_disable_all_modules">Tampilkan tombol "Nonaktifkan semua modul"</string>
     <string name="settings_show_disable_all_modules_summary">Tampilkan tombol di halaman modul untuk menonaktifkan semua modul secara bersamaan</string>
+    <string name="settings_module_sort_optimization">Optimasi Pengurutan Modul</string>
+    <string name="settings_module_sort_optimization_summary">Jadikan modul sistem dengan WebUI dan Action muncul di bagian atas</string>
     <string name="settings_show_more_module_info">Tampilkan detail modul</string>
     <string name="settings_show_more_module_info_summary">Tampilkan ID dan ukuran modul dalam daftar modul</string>
     <string name="apm_install_confirm_title">Instal modul</string>

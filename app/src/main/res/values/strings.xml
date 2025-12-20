@@ -212,6 +212,8 @@
     <string name="settings_apm_stay_on_page_summary">Do not automatically return after module action execution</string>
     <string name="settings_show_disable_all_modules">Show \'Disable All Modules\' button</string>
     <string name="settings_show_disable_all_modules_summary">Display a button in the modules page to disable all modules at once</string>
+    <string name="settings_module_sort_optimization">Module Sorting Optimization</string>
+    <string name="settings_module_sort_optimization_summary">Make system modules with WebUI and Action appear at the top</string>
     <string name="apm_install_confirm_title">Install Module</string>
     <string name="apm_install_confirm_content">Are you sure you want to install %s?</string>
     <string name="apm_disable_all_title">Disable All Modules</string>

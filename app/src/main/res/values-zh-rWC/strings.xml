@@ -201,6 +201,8 @@
     <string name="apm_install_confirm_content">道友确欲凝炼%s仙符入体乎？</string>
     <string name="settings_show_more_module_info">显仙符详录</string>
     <string name="settings_show_more_module_info_summary">仙符录中显仙符号与大小</string>
+    <string name="settings_module_sort_optimization">仙符排序优化</string>
+    <string name="settings_module_sort_optimization_summary">使天界仙符中具WebUI与符法者排于前列</string>
     <string name="apm_disable_all_title">禁诸仙符</string>
     <string name="apm_disable_all_confirm">确欲尽禁诸仙符乎？大抵天道易筋前为之可避天劫。</string>
 
