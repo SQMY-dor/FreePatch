@@ -489,7 +489,7 @@ fun SettingScreen(navigator: DestinationsNavigator) {
         
         var biometricLogin by rememberSaveable { mutableStateOf(prefs.getBoolean("biometric_login", false)) }
         var enableWebDebugging by rememberSaveable { mutableStateOf(prefs.getBoolean("enable_web_debugging", false)) }
-        var showMoreModuleInfo by rememberSaveable { mutableStateOf(prefs.getBoolean("show_more_module_info", false)) }
+        var showMoreModuleInfo by rememberSaveable { mutableStateOf(prefs.getBoolean("show_more_module_info", true)) }
         var installConfirm by rememberSaveable { mutableStateOf(prefs.getBoolean("apm_install_confirm_enabled", true)) }
         var showDisableAllModules by rememberSaveable { mutableStateOf(prefs.getBoolean("show_disable_all_modules", false)) }
         var stayOnPage by rememberSaveable { mutableStateOf(prefs.getBoolean("apm_action_stay_on_page", true)) }
@@ -1659,10 +1659,6 @@ fun SettingScreen(navigator: DestinationsNavigator) {
             val installConfirmSummary = stringResource(id = R.string.settings_apm_install_confirm_summary)
             val showInstallConfirm = aPatchReady && (matchBehavior || shouldShow(installConfirmTitle, installConfirmSummary))
 
-            val showMoreInfoTitle = stringResource(id = R.string.settings_show_more_module_info)
-            val showMoreInfoSummary = stringResource(id = R.string.settings_show_more_module_info_summary)
-            val showMoreInfo = aPatchReady && (matchBehavior || shouldShow(showMoreInfoTitle, showMoreInfoSummary))
-
             val disableModulesTitle = stringResource(id = R.string.settings_show_disable_all_modules)
             val disableModulesSummary = stringResource(id = R.string.settings_show_disable_all_modules_summary)
             val showDisableModules = aPatchReady && (matchBehavior || shouldShow(disableModulesTitle, disableModulesSummary))
@@ -1704,18 +1700,6 @@ fun SettingScreen(navigator: DestinationsNavigator) {
                         }
                     }
 
-                    if (showMoreInfo) {
-                        SwitchItem(
-                            icon = Icons.Filled.Info,
-                            title = showMoreInfoTitle,
-                            summary = showMoreInfoSummary,
-                            checked = showMoreModuleInfo
-                        ) {
-                            prefs.edit { putBoolean("show_more_module_info", it) }
-                            showMoreModuleInfo = it
-                        }
-                    }
-                    
                     // Install Confirm
                     if (showInstallConfirm) {
                         SwitchItem(
@@ -1875,6 +1859,10 @@ fun SettingScreen(navigator: DestinationsNavigator) {
             val moduleTitle = stringResource(R.string.settings_category_module)
             val matchModule = shouldShow(moduleTitle)
 
+            val showMoreInfoTitle = stringResource(id = R.string.settings_show_more_module_info)
+            val showMoreInfoSummary = stringResource(id = R.string.settings_show_more_module_info_summary)
+            val showMoreInfo = aPatchReady && (matchModule || shouldShow(showMoreInfoTitle, showMoreInfoSummary))
+
             val autoBackupTitle = stringResource(id = R.string.settings_auto_backup_module)
             val autoBackupSummary = stringResource(id = R.string.settings_auto_backup_module_summary)
             val showAutoBackup = aPatchReady && (matchModule || shouldShow(autoBackupTitle, autoBackupSummary))
@@ -1882,10 +1870,22 @@ fun SettingScreen(navigator: DestinationsNavigator) {
             val openBackupDirTitle = stringResource(id = R.string.settings_open_backup_dir)
             val showOpenBackupDir = aPatchReady && autoBackupModule && (matchModule || shouldShow(openBackupDirTitle))
 
-            val showModuleCategory = showAutoBackup || showOpenBackupDir
+            val showModuleCategory = showAutoBackup || showOpenBackupDir || showMoreInfo
 
             if (showModuleCategory) {
                 SettingsCategory(icon = Icons.Filled.Extension, title = moduleTitle, isSearching = searchText.isNotEmpty()) {
+                    if (showMoreInfo) {
+                        SwitchItem(
+                            icon = Icons.Filled.Info,
+                            title = showMoreInfoTitle,
+                            summary = showMoreInfoSummary,
+                            checked = showMoreModuleInfo
+                        ) {
+                            prefs.edit { putBoolean("show_more_module_info", it) }
+                            showMoreModuleInfo = it
+                        }
+                    }
+
                     if (showAutoBackup) {
                         SwitchItem(
                             icon = Icons.Filled.Save,

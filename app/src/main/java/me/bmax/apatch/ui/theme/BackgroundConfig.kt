@@ -333,11 +333,11 @@ object BackgroundConfig {// State
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val uri = prefs.getString(KEY_CUSTOM_BACKGROUND_URI, "background.png")
         val enabled = prefs.getBoolean(KEY_CUSTOM_BACKGROUND_ENABLED, true)
-        val opacity = prefs.getFloat(KEY_CUSTOM_BACKGROUND_OPACITY, 0.7f)
+        val opacity = prefs.getFloat(KEY_CUSTOM_BACKGROUND_OPACITY, 0.23f)
         val dim = prefs.getFloat(KEY_CUSTOM_BACKGROUND_DIM, 0.0f)
-        val dualDimEnabled = prefs.getBoolean(KEY_CUSTOM_BACKGROUND_DUAL_DIM_ENABLED, false)
-        val dayDim = prefs.getFloat(KEY_CUSTOM_BACKGROUND_DAY_DIM, dim)
-        val nightDim = prefs.getFloat(KEY_CUSTOM_BACKGROUND_NIGHT_DIM, dim)
+        val dualDimEnabled = prefs.getBoolean(KEY_CUSTOM_BACKGROUND_DUAL_DIM_ENABLED, true)
+        val dayDim = prefs.getFloat(KEY_CUSTOM_BACKGROUND_DAY_DIM, 0.0f)
+        val nightDim = prefs.getFloat(KEY_CUSTOM_BACKGROUND_NIGHT_DIM, 0.75f)
         
         val videoUri = prefs.getString(KEY_VIDEO_BACKGROUND_URI, null)
         val videoEnabled = prefs.getBoolean(KEY_VIDEO_BACKGROUND_ENABLED, false)
@@ -405,11 +405,11 @@ object BackgroundConfig {// State
         // Default to custom background enabled with "background.png"
         customBackgroundUri = "background.png"
         isCustomBackgroundEnabled = true
-        customBackgroundOpacity = 0.7f
+        customBackgroundOpacity = 0.23f
         customBackgroundDim = 0.0f
-        isDualBackgroundDimEnabled = false
+        isDualBackgroundDimEnabled = true
         customBackgroundDayDim = 0.0f
-        customBackgroundNightDim = 0.0f
+        customBackgroundNightDim = 0.75f
         
         videoBackgroundUri = null
         isVideoBackgroundEnabled = false
