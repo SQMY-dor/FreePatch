@@ -19,28 +19,35 @@ val androidCompileNdkVersion = "29.0.14206865"
 val managerVersionCode by extra(getVersionCode())
 val managerVersionName by extra(getVersionName())
 val branchname by extra(getbranch())
-fun Project.exec(command: String) = providers.exec {
-    commandLine(command.split(" "))
-}.standardOutput.asText.get().trim()
+fun Project.exec(command: String, default: String): String {
+    return try {
+        providers.exec {
+            commandLine(command.split(" "))
+            isIgnoreExitValue = true
+        }.standardOutput.asText.get().trim().takeIf { it.isNotEmpty() } ?: default
+    } catch (e: Exception) {
+        default
+    }
+}
 
 fun getGitCommitCount(): Int {
-    return exec("git rev-list --count HEAD").trim().toInt()
+    return exec("git rev-list --count HEAD", "0").toInt()
 }
 
 fun getGitDescribe(): String {
-    return exec("git rev-parse --verify --short HEAD").trim()
+    return exec("git rev-parse --verify --short HEAD", "unknown")
 }
 
 fun getVersionCode(): Int {
-    return 112154
+    return 112157
 }
 
 fun getbranch(): String {
-    return exec("git rev-parse --abbrev-ref HEAD").trim()
+    return exec("git rev-parse --abbrev-ref HEAD", "unknown")
 }
 
 fun getVersionName(): String {
-    return "2.7.5"
+    return "2.7.6"
 }
 
 tasks.register("printVersion") {
