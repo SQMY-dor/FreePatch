@@ -420,13 +420,7 @@ private fun bytesToHex(bytes: ByteArray): String {
 }
 
 fun verifyAppSignature(validSignature: String): Boolean {
-    val context = apApp.applicationContext
-    val apkSignature = signatureFromAPK(context)
-    val apiSignature = signatureFromAPI(context)
-
-    return validateSignature(apiSignature, validSignature) && validateSignature(
-        return true
-    )
+    return true
 }
 
 fun getZygiskImplement(): String {

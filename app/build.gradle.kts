@@ -96,6 +96,8 @@ android {
 
     defaultConfig {
         applicationId = "a.shifen.muyu"
+        buildConfigField("boolean", "DEBUG_FAKE_ROOT", "false")
+        buildConfigField("String", "buildKPV", "\"$kernelPatchVersion\"")
     }
 
     compileOptions {
