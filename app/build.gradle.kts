@@ -95,11 +95,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "me.yuki.folk"
-        buildConfigField("String", "buildKPV", "\"$kernelPatchVersion\"")
-        buildConfigField("boolean", "DEBUG_FAKE_ROOT", localProperties.getProperty("debug.fake_root", "false"))
-
-        base.archivesName = "FolkPatch_${managerVersionCode}_${managerVersionName}_on_${branchname}"
+        applicationId = "a.shifen.muyu"
     }
 
     compileOptions {
