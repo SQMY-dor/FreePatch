@@ -13,6 +13,12 @@
     <string name="kernel_patch">灵魂之力</string>
     <string name="android_patch">圣域守护</string>
 
+    <string name="settings_nav_layout_title">神谕圣所导航圣图设定</string>
+    <string name="settings_nav_layout_summary">隐去或现出神谕圣所导航圣图之部分组件</string>
+    <string name="settings_show_apm">现圣域守护</string>
+    <string name="settings_show_kpm">现灵魂之力</string>
+    <string name="settings_show_superuser">现圣使</string>
+
     <string name="reboot">神翼再生</string>
     <string name="settings">神谕圣所</string>
     <string name="reboot_recovery">进入治愈圣域</string>

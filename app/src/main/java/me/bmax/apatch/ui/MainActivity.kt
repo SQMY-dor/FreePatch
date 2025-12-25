@@ -34,8 +34,10 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.key
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateOf
 import android.content.SharedPreferences
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -517,6 +519,25 @@ private fun BottomBar(navController: NavHostController) {
     val state by APApplication.apStateLiveData.observeAsState(APApplication.State.UNKNOWN_STATE)
     val navigator = navController.rememberDestinationsNavigator()
 
+    val prefs = APApplication.sharedPreferences
+    var showNavApm by remember { mutableStateOf(prefs.getBoolean("show_nav_apm", true)) }
+    var showNavKpm by remember { mutableStateOf(prefs.getBoolean("show_nav_kpm", true)) }
+    var showNavSuperUser by remember { mutableStateOf(prefs.getBoolean("show_nav_superuser", true)) }
+
+    DisposableEffect(Unit) {
+        val listener = SharedPreferences.OnSharedPreferenceChangeListener { sharedPrefs, key ->
+            when (key) {
+                "show_nav_apm" -> showNavApm = sharedPrefs.getBoolean(key, true)
+                "show_nav_kpm" -> showNavKpm = sharedPrefs.getBoolean(key, true)
+                "show_nav_superuser" -> showNavSuperUser = sharedPrefs.getBoolean(key, true)
+            }
+        }
+        prefs.registerOnSharedPreferenceChangeListener(listener)
+        onDispose {
+            prefs.unregisterOnSharedPreferenceChangeListener(listener)
+        }
+    }
+
     Crossfade(
         targetState = state,
         label = "BottomBarStateCrossfade"
@@ -533,42 +554,51 @@ private fun BottomBar(navController: NavHostController) {
             }
         ) {
             BottomBarDestination.entries.forEach { destination ->
-                val isCurrentDestOnBackStack by navController.isRouteOnBackStackAsState(destination.direction)
+                val show = when {
+                    destination == BottomBarDestination.AModule && !showNavApm -> false
+                    destination == BottomBarDestination.KModule && !showNavKpm -> false
+                    destination == BottomBarDestination.SuperUser && !showNavSuperUser -> false
+                    (destination.kPatchRequired && !kPatchReady) || (destination.aPatchRequired && !aPatchReady) -> false
+                    else -> true
+                }
 
-                val hideDestination = (destination.kPatchRequired && !kPatchReady) || (destination.aPatchRequired && !aPatchReady)
-                if (hideDestination) return@forEach
+                if (show) {
+                    key(destination) {
+                        val isCurrentDestOnBackStack by navController.isRouteOnBackStackAsState(destination.direction)
 
-                NavigationBarItem(
-                    selected = isCurrentDestOnBackStack,
-                    onClick = {
-                        if (isCurrentDestOnBackStack) {
-                            navigator.popBackStack(destination.direction, false)
-                        }
-                        navigator.navigate(destination.direction) {
-                            popUpTo(NavGraphs.root) {
-                                saveState = true
-                            }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
-                    },
-                    icon = {
-                        if (isCurrentDestOnBackStack) {
-                            Icon(destination.iconSelected, stringResource(destination.label))
-                        } else {
-                            Icon(destination.iconNotSelected, stringResource(destination.label))
-                        }
-                    },
-                    label = {
-                        Text(
-                            text = stringResource(destination.label),
-                            overflow = TextOverflow.Visible,
-                            maxLines = 1,
-                            softWrap = false
+                        NavigationBarItem(
+                            selected = isCurrentDestOnBackStack,
+                            onClick = {
+                                if (isCurrentDestOnBackStack) {
+                                    navigator.popBackStack(destination.direction, false)
+                                }
+                                navigator.navigate(destination.direction) {
+                                    popUpTo(NavGraphs.root) {
+                                        saveState = true
+                                    }
+                                    launchSingleTop = true
+                                    restoreState = true
+                                }
+                            },
+                            icon = {
+                                if (isCurrentDestOnBackStack) {
+                                    Icon(destination.iconSelected, stringResource(destination.label))
+                                } else {
+                                    Icon(destination.iconNotSelected, stringResource(destination.label))
+                                }
+                            },
+                            label = {
+                                Text(
+                                    text = stringResource(destination.label),
+                                    overflow = TextOverflow.Visible,
+                                    maxLines = 1,
+                                    softWrap = false
+                                )
+                            },
+                            alwaysShowLabel = false
                         )
-                    },
-                    alwaysShowLabel = false
-                )
+                    }
+                }
             }
         }
     }

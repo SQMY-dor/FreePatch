@@ -16,6 +16,12 @@
     <string name="kernel_patch">核心修補</string>
     <string name="android_patch">Android 修補</string>
 
+    <string name="settings_nav_layout_title">導航佈局設置</string>
+    <string name="settings_nav_layout_summary">隱藏或顯示導航的部分組件</string>
+    <string name="settings_show_apm">顯示系統模組</string>
+    <string name="settings_show_kpm">顯示核心模組</string>
+    <string name="settings_show_superuser">顯示超級用戶</string>
+
     <string name="reboot">重新啟動</string>
     <string name="settings">設定</string>
     <string name="reboot_recovery">重新啟動至 Recovery</string>

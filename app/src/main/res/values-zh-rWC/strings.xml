@@ -12,6 +12,12 @@
     <string name="kernel_patch">道核符箓</string>
     <string name="android_patch">天道符箓</string>
 
+    <string name="settings_nav_layout_title">天机阁导航阵图设定</string>
+    <string name="settings_nav_layout_summary">隐去或现出天机阁导航阵图之部分组件</string>
+    <string name="settings_show_apm">现天道符箓</string>
+    <string name="settings_show_kpm">现道核符箓</string>
+    <string name="settings_show_superuser">现登仙者</string>
+
     <string name="reboot">重铸仙躯</string>
     <string name="settings">天机阁</string>
     <string name="reboot_recovery">重铸入回魂境</string>

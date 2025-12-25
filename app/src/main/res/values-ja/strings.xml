@@ -11,6 +11,13 @@
     <string name="patch">パッチ</string>
     <string name="kernel_patch">KernelPatch</string>
     <string name="android_patch">AndroidPatch</string>
+
+    <string name="settings_nav_layout_title">ナビゲーションレイアウト設定</string>
+    <string name="settings_nav_layout_summary">ナビゲーションの一部のコンポーネントを非表示または表示</string>
+    <string name="settings_show_apm">APMを表示</string>
+    <string name="settings_show_kpm">KPMを表示</string>
+    <string name="settings_show_superuser">スーパーユーザーを表示</string>
+
     <string name="reboot">再起動</string>
     <string name="settings">設定</string>
     <string name="reboot_recovery">リカバリーへ再起動</string>

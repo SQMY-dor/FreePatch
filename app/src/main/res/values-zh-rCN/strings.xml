@@ -13,6 +13,12 @@
     <string name="kernel_patch">内核补丁</string>
     <string name="android_patch">系统补丁</string>
 
+    <string name="settings_nav_layout_title">导航布局设置</string>
+    <string name="settings_nav_layout_summary">隐藏或显示导航的部分组件</string>
+    <string name="settings_show_apm">显示系统模块</string>
+    <string name="settings_show_kpm">显示内核模块</string>
+    <string name="settings_show_superuser">显示超级用户</string>
+
     <string name="reboot">重启</string>
     <string name="settings">设置</string>
     <string name="reboot_recovery">重启到 Recovery</string>

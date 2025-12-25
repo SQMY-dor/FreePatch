@@ -13,6 +13,12 @@
     <string name="kernel_patch">KernelPatch</string>
     <string name="android_patch">AndroidPatch</string>
 
+    <string name="settings_nav_layout_title">Configuração do Layout de Navegação</string>
+    <string name="settings_nav_layout_summary">Ocultar ou mostrar alguns componentes de navegação</string>
+    <string name="settings_show_apm">Mostrar APM</string>
+    <string name="settings_show_kpm">Mostrar KPM</string>
+    <string name="settings_show_superuser">Mostrar SuperUser</string>
+
     <string name="reboot">Reiniciar</string>
     <string name="settings">Configurações</string>
     <string name="reboot_recovery">Reiniciar no Recovery</string>

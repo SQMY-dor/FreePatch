@@ -35,6 +35,52 @@ import androidx.compose.ui.unit.dp
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.ListItemDefaults
+import androidx.compose.material3.Checkbox
+
+@Composable
+fun CheckboxItem(
+    icon: ImageVector?,
+    title: String,
+    summary: String?,
+    checked: Boolean,
+    enabled: Boolean = true,
+    onCheckedChange: (Boolean) -> Unit
+) {
+    ListItem(
+        headlineContent = { Text(title) },
+        supportingContent = {
+            if (summary != null) {
+                Text(
+                    text = summary,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.outline
+                )
+            }
+        },
+        leadingContent = {
+            if (icon != null) {
+                Icon(
+                    imageVector = icon,
+                    contentDescription = null
+                )
+            }
+        },
+        trailingContent = {
+            Checkbox(
+                checked = checked,
+                onCheckedChange = null,
+                enabled = enabled
+            )
+        },
+        colors = ListItemDefaults.colors(containerColor = Color.Transparent),
+        modifier = Modifier.toggleable(
+            value = checked,
+            onValueChange = onCheckedChange,
+            role = Role.Checkbox,
+            enabled = enabled
+        )
+    )
+}
 
 @Composable
 fun SwitchItem(
@@ -85,6 +131,7 @@ fun SwitchItem(
 fun SettingsCategory(
     icon: ImageVector? = null,
     title: String,
+    summary: String? = null,
     initialExpanded: Boolean = false,
     isSearching: Boolean = false,
     content: @Composable () -> Unit
@@ -106,6 +153,15 @@ fun SettingsCategory(
                     fontWeight = FontWeight.Bold
                 )
             },
+            supportingContent = if (summary != null) {
+                {
+                    Text(
+                        text = summary,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.outline
+                    )
+                }
+            } else null,
             leadingContent = if (icon != null) {
                 {
                     Icon(

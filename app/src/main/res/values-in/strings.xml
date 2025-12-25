@@ -16,6 +16,12 @@
     <string name="kernel_patch">KernelPatch</string>
     <string name="android_patch">AndroidPatch</string>
 
+    <string name="settings_nav_layout_title">Pengaturan Tata Letak Navigasi</string>
+    <string name="settings_nav_layout_summary">Sembunyikan atau tampilkan beberapa komponen navigasi</string>
+    <string name="settings_show_apm">Tampilkan APM</string>
+    <string name="settings_show_kpm">Tampilkan KPM</string>
+    <string name="settings_show_superuser">Tampilkan SuperUser</string>
+
     <string name="reboot">Mulai Ulang</string>
     <string name="settings">Pengaturan</string>
     <string name="reboot_recovery">Mulai Ulang ke Recovery</string>

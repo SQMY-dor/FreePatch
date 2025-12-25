@@ -67,6 +67,11 @@ import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Animation
 import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.Extension
+import androidx.compose.material.icons.filled.Archive
+import androidx.compose.material.icons.filled.Security
+import androidx.compose.material.icons.filled.ViewQuilt
+import me.bmax.apatch.ui.component.CheckboxItem
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.generated.destinations.ThemeStoreScreenDestination
 
@@ -865,6 +870,19 @@ fun SettingScreen(navigator: DestinationsNavigator) {
             val homeLayoutValue = stringResource(homeLayoutStyleToString(currentStyle.toString()))
             val showHomeLayout = matchAppearance || shouldShow(homeLayoutTitle, homeLayoutValue)
 
+            // Navigation Layout Settings
+            val navLayoutTitle = stringResource(id = R.string.settings_nav_layout_title)
+            val navLayoutSummary = stringResource(id = R.string.settings_nav_layout_summary)
+            val showNavApmTitle = stringResource(id = R.string.settings_show_apm)
+            val showNavKpmTitle = stringResource(id = R.string.settings_show_kpm)
+            val showNavSuperUserTitle = stringResource(id = R.string.settings_show_superuser)
+
+            val showNavLayout = matchAppearance || shouldShow(navLayoutTitle, navLayoutSummary)
+
+            var showNavApm by rememberSaveable { mutableStateOf(prefs.getBoolean("show_nav_apm", true)) }
+            var showNavKpm by rememberSaveable { mutableStateOf(prefs.getBoolean("show_nav_kpm", true)) }
+            var showNavSuperUser by rememberSaveable { mutableStateOf(prefs.getBoolean("show_nav_superuser", true)) }
+
             // Grid Layout Background
             val isKernelSuStyle = prefs.getString("home_layout_style", "kernelsu") == "kernelsu"
             val gridBackgroundTitle = stringResource(id = R.string.settings_grid_working_card_background)
@@ -1056,6 +1074,46 @@ fun SettingScreen(navigator: DestinationsNavigator) {
                                 color = MaterialTheme.colorScheme.outline
                             )
                         }, leadingContent = { Icon(Icons.Filled.Dashboard, null) })
+                    }
+
+                    // Navigation Layout Settings (New)
+                    if (showNavLayout) {
+                        SettingsCategory(
+                            icon = Icons.Filled.ViewQuilt,
+                            title = navLayoutTitle,
+                            summary = navLayoutSummary,
+                            isSearching = searchText.isNotEmpty()
+                        ) {
+                            CheckboxItem(
+                                icon = Icons.Filled.Extension,
+                                title = showNavApmTitle,
+                                summary = null,
+                                checked = showNavApm
+                            ) {
+                                showNavApm = it
+                                prefs.edit().putBoolean("show_nav_apm", it).apply()
+                            }
+
+                            CheckboxItem(
+                                icon = Icons.Filled.Archive,
+                                title = showNavKpmTitle,
+                                summary = null,
+                                checked = showNavKpm
+                            ) {
+                                showNavKpm = it
+                                prefs.edit().putBoolean("show_nav_kpm", it).apply()
+                            }
+
+                            CheckboxItem(
+                                icon = Icons.Filled.Security,
+                                title = showNavSuperUserTitle,
+                                summary = null,
+                                checked = showNavSuperUser
+                            ) {
+                                showNavSuperUser = it
+                                prefs.edit().putBoolean("show_nav_superuser", it).apply()
+                            }
+                        }
                     }
 
                     // Grid Layout Background
