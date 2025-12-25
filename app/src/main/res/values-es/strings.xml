@@ -18,8 +18,6 @@
     <string name="settings_show_apm">Mostrar APM</string>
     <string name="settings_show_kpm">Mostrar KPM</string>
     <string name="settings_show_superuser">Mostrar SuperUsuario</string>
-    <string name="settings_disable_module_update_check">Desactivar verificación de actualización de módulos</string>
-    <string name="settings_disable_module_update_check_summary">Desactivar verificación automática de actualizaciones para módulos del sistema</string>
 
     <string name="reboot">Reiniciar</string>
     <string name="settings">Ajustes</string>
