@@ -22,6 +22,12 @@
     <string name="settings_disable_module_update_check">Wyłącz sprawdzanie aktualizacji modułów</string>
     <string name="settings_disable_module_update_check_summary">Wyłącz automatyczne sprawdzanie aktualizacji dla modułów systemowych</string>
 
+    <string name="settings_nav_layout_title">Ustawienia układu nawigacji</string>
+    <string name="settings_nav_layout_summary">Ukryj lub pokaż niektóre elementy nawigacji</string>
+    <string name="settings_show_apm">Pokaż APM</string>
+    <string name="settings_show_kpm">Pokaż KPM</string>
+    <string name="settings_show_superuser">Pokaż SuperUser</string>
+
     <string name="reboot">Uruchom ponownie</string>
     <string name="settings">Ustawienia</string>
     <string name="reboot_recovery">Uruchom ponownie w trybie Recovery</string>
